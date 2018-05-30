@@ -16,7 +16,7 @@ INSERT LINKS HERE
 ```
 
 ### APIs to use
-* [ESPN] - Insert description
+* [ESPN](http://www.espn.com/apis/devcenter) - An API to get the most current sport data, with news and statistics!
 * [] - Insert description
 
 ### Rough tasks breakdown
