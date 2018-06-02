@@ -14,8 +14,19 @@ i.login {
     Styling for the spreads page
 */
 
+.collapsible-body {
+padding: 3px;
+}
+
 #teams {
     margin: 5px 0px;
+    border: 1px solid lightblue;
+}
+
+#teams-header {
+    font-size: 8px;
+    margin: 5px 0px;
+    font-weight: bold;
 }
 
 #away-team {
@@ -26,8 +37,13 @@ i.login {
     margin: 5px 0px;
 }
 
+#game-header {
+    font-size: 12px;
+}
+
 #game {
     margin: 5px 0px;
+    font-size: 10px;
 }
 
 #spread-subcategory {
