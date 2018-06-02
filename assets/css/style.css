@@ -11,6 +11,23 @@ i.login {
 }
 
 /*
+    Styling for the navbar & sidebar
+*/
+.nav-wrapper>a>.material-icons {
+    padding-right: 10px;
+}
+
+ul.sidenav>li>a>i.align {
+    margin-left: 4px;
+    margin-right: 28px;
+}
+
+.nav-wrapper>.brand-logo.row>.row>.col {
+    font-size: 14px;
+}
+
+
+/*
     Styling for the spreads page
 */
 
