@@ -15,9 +15,52 @@
 </head>
 
 <body>
-    <!-- START Body -->
+<!-- START Body -->
     <!-- START Header -->
+    <nav>
+        <div class="nav-wrapper">
+            <div class="brand-logo row">
+                Playbook
 
+                <!--
+                <div class="row">
+                    <div class="col s12">current bets:</div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="row">
+                    <div class="col s12">available balance:</div>
+                </div>
+                -->
+            </div>
+            <a href="pending-tickets.html" class="right"><i class="material-icons">playlist_add_check</i></a>
+            <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Sports Book</a></li>
+                <li><a href="pending-tickets.html">Confirm Tickets</a></li>
+                <li><a href="current-tickets.html">Current Bets & Balances</a></li>
+                <li><a href="live-scores.html">Live Scores</a></li>
+                <li><a href="favorites.html">Choose Favorites</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- SideNav, for mobile, pulls from the left -->
+    <ul class="sidenav" id="mobile">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="assets/img/field.png">
+                </div>
+                <a href="#"><img class="circle" src="assets/img/user.svg"></a>
+                <a href="#"><span class="white-text name">John Doe</span></a>
+            </div>
+        </li>
+        <li><a href="#"><i class="material-icons">home</i>Sports Book</a></li>
+        <li><a href="pending-tickets.html"><i class="material-icons align">playlist_add_check</i>Confirm Tickets</a></li>
+        <li><a href="current-tickets.html"><i class="material-icons">view_headline</i>Open Tickets & Balances</a></li>
+        <li><a href="live-scores.html"><i class="material-icons">videocam</i>Live Scores</a></li>
+        <li><a href="favorites.html"><i class="material-icons">star</i>Choose Favorites</a></li>
+    </ul>
     <!-- END Header -->
 
     <!-- START Main-->
@@ -104,10 +147,10 @@
     <!-- END Footer -->
 
     <!-- END Body -->
-    <!-- Materialize JS CDN; Compiled and minified -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <!-- jQuery JS CDN; Compiled and minified -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Materialize JS CDN; Compiled and minified -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <!-- Moments JS CDN; Compiled and minified  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     <!-- Local JS file; Not compiled nor minified -->
