@@ -9,3 +9,28 @@ i.login {
     height: 35px;
     width: 35px;
 }
+
+/*
+    Styling for the spreads page
+*/
+
+#teams {
+    margin: 5px 0px;
+}
+
+#away-team {
+    margin: 5px 0px;
+}
+
+#home-team {
+    margin: 5px 0px;
+}
+
+#game {
+    margin: 5px 0px;
+}
+
+#spread-subcategory {
+    margin: 5px 0px;
+}
+
