@@ -12,51 +12,66 @@
     <!-- Local CSS file; Not compiled nor minified -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="light-blue lighten-3">
 <!-- START Body -->
     <!-- START Header -->
     <!-- END Header -->
 
     <!-- START Main-->
-    <div id="login" class="row">
-        <div class="col s12 z-depth-4 card-panel">
-            <form>
+                                                <!-- TODO: vertical align in the middle-->
+    <div class="container">
+        <div class="section">
+            <div class="col s12 z-depth-5 card-panel">
+                <form>
 
-                <div class="row">
-                    <div class="input-field col s12 center">
-                    <p class="center login-form-text">Playbook Sportsbook and Bets</p>
+                    <div class="row">
+                        <div class="col s12 center">
+                            <p class="center">Playbook Sportsbook and Bets</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col s2">
-                        <i class="material-icons">assignment_ind</i>
-                    </div>
-                    <div class="col s8 input-field margin">
-                        <input id="username" type="text">
-                        <label for="username" class="center-align">Username</label>
-                    </div>
-                </div>
-                </div>
-                <div class="row margin">
-                    <div class="input-field col s12">
-                    <i class="mdi-action-lock-outline prefix"></i>
-                    <input id="password" type="password">
-                    <label for="password">Password</label>
-                    </div>
-                </div>
-                <div class="row">          
-                    <div class="input-field col s6 m12 l12  login-text">
-                        <input type="checkbox" id="remember-me" />
-                        <label for="remember-me">Remember me</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                    <a href="index.html" class="btn waves-effect waves-light col s12">Login</a>
-                    </div>
-                </div>
 
-            </form>
+                    <div class="row">
+                        <div class="col s1"></div>
+                        <div class="col s1">
+                            <i class="material-icons login">assignment_ind</i>
+                        </div>
+                        <div class="col s1"></div>
+                        <div class="col s7 input-field">
+                            <input id="userId" type="text">
+                            <label for="userId">User ID</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s1"></div>
+                        <div class="col s1">
+                            <i class="material-icons login">lock</i>
+                        </div>
+                        <div class="col s1"></div>
+                        <div class="col s7 input-field">
+                            <input id="password" type="password">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="row">          
+                        <label class="input-field col s11 center-align">
+                            <input id="remember-me" type="checkbox" />
+                            <span for="remember-me">Remember me</span>
+                        </label>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                        <a href="index.html" class="btn waves-effect waves-light col s12">Login</a>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
         </div>
     </div>
 
