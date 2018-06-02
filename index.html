@@ -65,73 +65,362 @@
 
     <!-- START Main-->
 
-    <div class="row" id="spread-subcategory">
-
-        <div class="col s1 offset-s1" id="category-logo">cat logo</div>
-        <div class="col s3" id="subcategory-name">Subcategory</div>
-        <div class="col s4" id="games-description">Games Description</div>
-        <div class="col s3" id="game-date">Date</div>
-        <div class="clearfix"></div>
-
-        <div class="row" id="game">
-            <div class="col s2" id="game-date">Date</div>
-            <div class="col s2" id="time">Time</div>
-            <div class="col s2" id="time-zone">Time Zone</div>
-            <div class="col s2" id="spread">Spread</div>
-            <div class="col s2" id="total">Total</div>
-            <div class="col s2" id="odds">Odds</div>
-            <div class="clearfix"></div>
-
-            <div class="row" id="teams">
-                <div class="row" id="away-team">
-                    <div class="col s1" id="away-team-bet-number">bet#</div>
-                    <div class="col s1" id="away-team-logo">logo</div>
-                    <div class="col s4" id="away-team-name">Team Name</div>
-                    <div class="col s2" id="away-team-spread">Spread</div>
-                    <div class="col s2" id="total-over">Over-Under</div>
-                    <div class="col s2" id="away-team-odds">Odds</div>
-                    <div class="clearfix"></div>
-                </div>
-
-                <div class="row" id="home-team">
-                    <div class="col s1" id="home-team-bet-number">bet#</div>
-                    <div class="col s1" id="home-team-logo">logo</div>
-                    <div class="col s4" id="home-team-name">Team Name</div>
-                    <div class="col s2" id="home-team-spread">Spread</div>
-                    <div class="col s2" id="total-under">Over-Under</div>
-                    <div class="col s2" id="home-team-odds">Odds</div>
-                    <div class="clearfix"></div>
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-
-    </div>
-
     <ul class="collapsible">
         <li>
             <div class="collapsible-header">
-                <i class="material-icons">filter_drama</i>First</div>
+                <div class="col s1" id="category-logo">cat logo</div>
+                <div class="col s3" id="subcategory-name">MLB</div>
+            </div>
             <div class="collapsible-body">
-                <span>Lorem ipsum dolor sit amet.</span>
+                <div class="row" id="spread-subcategory">
+
+                    <div class="row" id="game-header">
+                        <div class="col s1 offset-s1" id="category-logo">logo</div>
+                        <div class="col s3" id="subcategory-name">MLB</div>
+                        <div class="col s4" id="games-description">National League</div>
+                        <div class="col s3" id="game-date">JUN 02</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row" id="game">
+                        <div class="row" id="teams-header">
+                            <div class="col s2" id="game-date">JUN 02</div>
+                            <div class="col s1" id="time">18:00</div>
+                            <div class="col s1" id="time-zone">CST</div>
+                            <div class="col s2 offset-s1" id="spread">Spread</div>
+                            <div class="col s3" id="total">Total</div>
+                            <div class="col s2" id="odds">Odds</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row" id="teams">
+                            <div class="row" id="away-team">
+                                <div class="col s1" id="away-team-bet-number">501</div>
+                                <div class="col s1" id="away-team-logo">logo</div>
+                                <div class="col s3" id="away-team-name">CHI CUBS</div>
+                                <div class="col s2" id="away-team-spread">-1.5 +140</div>
+                                <div class="col s3" id="total-over">Ov 9.5 +105</div>
+                                <div class="col s2" id="away-team-odds">-116</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="row" id="home-team">
+                                <div class="col s1" id="home-team-bet-number">502</div>
+                                <div class="col s1" id="home-team-logo">logo</div>
+                                <div class="col s3" id="home-team-name">NY METS</div>
+                                <div class="col s2" id="home-team-spread">+1.5 -160</div>
+                                <div class="col s3" id="total-under">Un 9.5 -125</div>
+                                <div class="col s2" id="home-team-odds">-104</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="game">
+                        <div class="row" id="teams-header">
+                            <div class="col s2" id="game-date">Date</div>
+                            <div class="col s2" id="time">Time</div>
+                            <div class="col s2" id="time-zone">Zone</div>
+                            <div class="col s2" id="spread">Spread</div>
+                            <div class="col s2" id="total">Total</div>
+                            <div class="col s2" id="odds">Odds</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row" id="teams">
+                            <div class="row" id="away-team">
+                                <div class="col s1" id="away-team-bet-number">bet#</div>
+                                <div class="col s1" id="away-team-logo">logo</div>
+                                <div class="col s4" id="away-team-name">Team Name</div>
+                                <div class="col s2" id="away-team-spread">Spread</div>
+                                <div class="col s2" id="total-over">Over</div>
+                                <div class="col s2" id="away-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="row" id="home-team">
+                                <div class="col s1" id="home-team-bet-number">bet#</div>
+                                <div class="col s1" id="home-team-logo">logo</div>
+                                <div class="col s4" id="home-team-name">Team Name</div>
+                                <div class="col s2" id="home-team-spread">Spread</div>
+                                <div class="col s2" id="total-under">Under</div>
+                                <div class="col s2" id="home-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="game">
+                        <div class="row" id="teams-header">
+                            <div class="col s2" id="game-date">Date</div>
+                            <div class="col s2" id="time">Time</div>
+                            <div class="col s2" id="time-zone">Zone</div>
+                            <div class="col s2" id="spread">Spread</div>
+                            <div class="col s2" id="total">Total</div>
+                            <div class="col s2" id="odds">Odds</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row" id="teams">
+                            <div class="row" id="away-team">
+                                <div class="col s1" id="away-team-bet-number">bet#</div>
+                                <div class="col s1" id="away-team-logo">logo</div>
+                                <div class="col s4" id="away-team-name">Team Name</div>
+                                <div class="col s2" id="away-team-spread">Spread</div>
+                                <div class="col s2" id="total-over">Over</div>
+                                <div class="col s2" id="away-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="row" id="home-team">
+                                <div class="col s1" id="home-team-bet-number">bet#</div>
+                                <div class="col s1" id="home-team-logo">logo</div>
+                                <div class="col s4" id="home-team-name">Team Name</div>
+                                <div class="col s2" id="home-team-spread">Spread</div>
+                                <div class="col s2" id="total-under">Under</div>
+                                <div class="col s2" id="home-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </li>
         <li>
             <div class="collapsible-header">
-                <i class="material-icons">place</i>Second</div>
+                <div class="col s1" id="category-logo">cat logo</div>
+                <div class="col s3" id="subcategory-name">Subcategory</div>
+            </div>
             <div class="collapsible-body">
-                <span>Lorem ipsum dolor sit amet.</span>
+                <div class="row" id="spread-subcategory">
+
+                    <div class="row" id="game-header">
+                        <div class="col s1 offset-s1" id="category-logo">logo</div>
+                        <div class="col s3" id="subcategory-name">Subcategory</div>
+                        <div class="col s4" id="games-description">Games Description</div>
+                        <div class="col s3" id="game-date">Date</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row" id="game">
+                        <div class="row" id="teams-header">
+                            <div class="col s2" id="game-date">Date</div>
+                            <div class="col s2" id="time">Time</div>
+                            <div class="col s2" id="time-zone">Zone</div>
+                            <div class="col s2" id="spread">Spread</div>
+                            <div class="col s2" id="total">Total</div>
+                            <div class="col s2" id="odds">Odds</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row" id="teams">
+                            <div class="row" id="away-team">
+                                <div class="col s1" id="away-team-bet-number">bet#</div>
+                                <div class="col s1" id="away-team-logo">logo</div>
+                                <div class="col s4" id="away-team-name">Team Name</div>
+                                <div class="col s2" id="away-team-spread">Spread</div>
+                                <div class="col s2" id="total-over">Over</div>
+                                <div class="col s2" id="away-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="row" id="home-team">
+                                <div class="col s1" id="home-team-bet-number">bet#</div>
+                                <div class="col s1" id="home-team-logo">logo</div>
+                                <div class="col s4" id="home-team-name">Team Name</div>
+                                <div class="col s2" id="home-team-spread">Spread</div>
+                                <div class="col s2" id="total-under">Under</div>
+                                <div class="col s2" id="home-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="game">
+                        <div class="row" id="teams-header">
+                            <div class="col s2" id="game-date">Date</div>
+                            <div class="col s2" id="time">Time</div>
+                            <div class="col s2" id="time-zone">Zone</div>
+                            <div class="col s2" id="spread">Spread</div>
+                            <div class="col s2" id="total">Total</div>
+                            <div class="col s2" id="odds">Odds</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row" id="teams">
+                            <div class="row" id="away-team">
+                                <div class="col s1" id="away-team-bet-number">bet#</div>
+                                <div class="col s1" id="away-team-logo">logo</div>
+                                <div class="col s4" id="away-team-name">Team Name</div>
+                                <div class="col s2" id="away-team-spread">Spread</div>
+                                <div class="col s2" id="total-over">Over</div>
+                                <div class="col s2" id="away-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="row" id="home-team">
+                                <div class="col s1" id="home-team-bet-number">bet#</div>
+                                <div class="col s1" id="home-team-logo">logo</div>
+                                <div class="col s4" id="home-team-name">Team Name</div>
+                                <div class="col s2" id="home-team-spread">Spread</div>
+                                <div class="col s2" id="total-under">Under</div>
+                                <div class="col s2" id="home-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="game">
+                        <div class="row" id="teams-header">
+                            <div class="col s2" id="game-date">Date</div>
+                            <div class="col s2" id="time">Time</div>
+                            <div class="col s2" id="time-zone">Zone</div>
+                            <div class="col s2" id="spread">Spread</div>
+                            <div class="col s2" id="total">Total</div>
+                            <div class="col s2" id="odds">Odds</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row" id="teams">
+                            <div class="row" id="away-team">
+                                <div class="col s1" id="away-team-bet-number">bet#</div>
+                                <div class="col s1" id="away-team-logo">logo</div>
+                                <div class="col s4" id="away-team-name">Team Name</div>
+                                <div class="col s2" id="away-team-spread">Spread</div>
+                                <div class="col s2" id="total-over">Over</div>
+                                <div class="col s2" id="away-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="row" id="home-team">
+                                <div class="col s1" id="home-team-bet-number">bet#</div>
+                                <div class="col s1" id="home-team-logo">logo</div>
+                                <div class="col s4" id="home-team-name">Team Name</div>
+                                <div class="col s2" id="home-team-spread">Spread</div>
+                                <div class="col s2" id="total-under">Under</div>
+                                <div class="col s2" id="home-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </li>
         <li>
             <div class="collapsible-header">
-                <i class="material-icons">whatshot</i>Third</div>
+                <div class="col s1" id="category-logo">cat logo</div>
+                <div class="col s3" id="subcategory-name">Subcategory</div>
+            </div>
             <div class="collapsible-body">
-                <span>Lorem ipsum dolor sit amet.</span>
+                <div class="row" id="spread-subcategory">
+
+                    <div class="row" id="game-header">
+                        <div class="col s1 offset-s1" id="category-logo">logo</div>
+                        <div class="col s3" id="subcategory-name">Subcategory</div>
+                        <div class="col s4" id="games-description">Games Description</div>
+                        <div class="col s3" id="game-date">Date</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row" id="game">
+                        <div class="row" id="teams-header">
+                            <div class="col s2" id="game-date">Date</div>
+                            <div class="col s2" id="time">Time</div>
+                            <div class="col s2" id="time-zone">Zone</div>
+                            <div class="col s2" id="spread">Spread</div>
+                            <div class="col s2" id="total">Total</div>
+                            <div class="col s2" id="odds">Odds</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row" id="teams">
+                            <div class="row" id="away-team">
+                                <div class="col s1" id="away-team-bet-number">bet#</div>
+                                <div class="col s1" id="away-team-logo">logo</div>
+                                <div class="col s4" id="away-team-name">Team Name</div>
+                                <div class="col s2" id="away-team-spread">Spread</div>
+                                <div class="col s2" id="total-over">Over</div>
+                                <div class="col s2" id="away-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="row" id="home-team">
+                                <div class="col s1" id="home-team-bet-number">bet#</div>
+                                <div class="col s1" id="home-team-logo">logo</div>
+                                <div class="col s4" id="home-team-name">Team Name</div>
+                                <div class="col s2" id="home-team-spread">Spread</div>
+                                <div class="col s2" id="total-under">Under</div>
+                                <div class="col s2" id="home-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="game">
+                        <div class="row" id="teams-header">
+                            <div class="col s2" id="game-date">Date</div>
+                            <div class="col s2" id="time">Time</div>
+                            <div class="col s2" id="time-zone">Zone</div>
+                            <div class="col s2" id="spread">Spread</div>
+                            <div class="col s2" id="total">Total</div>
+                            <div class="col s2" id="odds">Odds</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row" id="teams">
+                            <div class="row" id="away-team">
+                                <div class="col s1" id="away-team-bet-number">bet#</div>
+                                <div class="col s1" id="away-team-logo">logo</div>
+                                <div class="col s4" id="away-team-name">Team Name</div>
+                                <div class="col s2" id="away-team-spread">Spread</div>
+                                <div class="col s2" id="total-over">Over</div>
+                                <div class="col s2" id="away-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="row" id="home-team">
+                                <div class="col s1" id="home-team-bet-number">bet#</div>
+                                <div class="col s1" id="home-team-logo">logo</div>
+                                <div class="col s4" id="home-team-name">Team Name</div>
+                                <div class="col s2" id="home-team-spread">Spread</div>
+                                <div class="col s2" id="total-under">Under</div>
+                                <div class="col s2" id="home-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="game">
+                        <div class="row" id="teams-header">
+                            <div class="col s2" id="game-date">Date</div>
+                            <div class="col s2" id="time">Time</div>
+                            <div class="col s2" id="time-zone">Zone</div>
+                            <div class="col s2" id="spread">Spread</div>
+                            <div class="col s2" id="total">Total</div>
+                            <div class="col s2" id="odds">Odds</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row" id="teams">
+                            <div class="row" id="away-team">
+                                <div class="col s1" id="away-team-bet-number">bet#</div>
+                                <div class="col s1" id="away-team-logo">logo</div>
+                                <div class="col s4" id="away-team-name">Team Name</div>
+                                <div class="col s2" id="away-team-spread">Spread</div>
+                                <div class="col s2" id="total-over">Over</div>
+                                <div class="col s2" id="away-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="row" id="home-team">
+                                <div class="col s1" id="home-team-bet-number">bet#</div>
+                                <div class="col s1" id="home-team-logo">logo</div>
+                                <div class="col s4" id="home-team-name">Team Name</div>
+                                <div class="col s2" id="home-team-spread">Spread</div>
+                                <div class="col s2" id="total-under">Under</div>
+                                <div class="col s2" id="home-team-odds">Odds</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </li>
     </ul>
