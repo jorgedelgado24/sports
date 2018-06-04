@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Local CSS file; Not compiled nor minified -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
 </head>
 
 <body>
-<!-- START Body -->
+    <!-- START Body -->
     <!-- START Header -->
     <nav>
         <div class="nav-wrapper">
@@ -33,19 +34,35 @@
                 </div>
                 -->
             </div>
-            <a href="pending-tickets.html" class="right"><i class="material-icons">playlist_add_check</i></a>
-            <a href="index.html" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a href="pending-tickets.html" class="right">
+                <i class="material-icons">playlist_add_check</i>
+            </a>
+            <a href="index.html" data-target="mobile" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="index.html">Sports Book</a></li>
-                <li><a href="pending-tickets.html">Confirm Tickets</a></li>
-                <li><a href="current-tickets.html">Current Bets & Balances</a></li>
-                <li><a href="live-scores.html">Live Scores</a></li>
-                <li><a href="#">Choose Favorites</a></li>
-                <li><a href="settings.html">Settings</a></li>
+                <li>
+                    <a href="index.html">Sports Book</a>
+                </li>
+                <li>
+                    <a href="pending-tickets.html">Confirm Tickets</a>
+                </li>
+                <li>
+                    <a href="current-tickets.html">Current Bets & Balances</a>
+                </li>
+                <li>
+                    <a href="live-scores.html">Live Scores</a>
+                </li>
+                <li>
+                    <a href="#">Choose Favorites</a>
+                </li>
+                <li>
+                    <a href="settings.html">Settings</a>
+                </li>
             </ul>
         </div>
     </nav>
-    
+
     <!-- SideNav, for mobile, pulls from the left -->
     <ul class="sidenav" id="mobile">
         <li>
@@ -53,18 +70,58 @@
                 <div class="background">
                     <img src="assets/img/field.png">
                 </div>
-                <a href="#"><img class="circle" src="assets/img/user.svg"></a>
-                <a href="#"><span class="white-text name">John Doe</span></a>
+                <a href="#">
+                    <img class="circle" src="assets/img/user.svg">
+                </a>
+                <a href="#">
+                    <span class="white-text name">John Doe</span>
+                </a>
             </div>
         </li>
-        <li><a href="index.html"><i class="material-icons">home</i>Sports Book</a></li>
-        <li><a href="pending-tickets.html"><i class="material-icons align">playlist_add_check</i>Confirm Tickets</a></li>
-        <li><a href="current-tickets.html"><i class="material-icons">view_headline</i>Open Tickets & Balances</a></li>
-        <li><a href="live-scores.html"><i class="material-icons">videocam</i>Live Scores</a></li>
-        <li><a href="#"><i class="material-icons">star</i>Choose Favorites</a></li>
-        <li><a href="settings.html"><i class="material-icons">settings</i>Settings</a></li>
+        <li>
+            <a href="index.html">
+                <i class="material-icons">home</i>Sports Book</a>
+        </li>
+        <li>
+            <a href="pending-tickets.html">
+                <i class="material-icons align">playlist_add_check</i>Confirm Tickets</a>
+        </li>
+        <li>
+            <a href="current-tickets.html">
+                <i class="material-icons">view_headline</i>Open Tickets & Balances</a>
+        </li>
+        <li>
+            <a href="live-scores.html">
+                <i class="material-icons">videocam</i>Live Scores</a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="material-icons">star</i>Choose Favorites</a>
+        </li>
+        <li>
+            <a href="settings.html">
+                <i class="material-icons">settings</i>Settings</a>
+        </li>
     </ul>
     <!-- END Header -->
+
+    <!-- START Favorites bar -->
+    <div class="row fav-bar">
+        <div class="col s12">
+            <table class="responsive-table">
+                <tbody>
+                    <tr class="fav-row">
+                        <td class="fav-icon">
+                            <a class="btn-floating btn-large waves-effect waves-light red">Add</a>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <hr class="fav-bar">
+    <!-- END Favorites bar -->
 
     <!-- START Main-->
 
