@@ -26,10 +26,34 @@ ul.sidenav>li>a>i.align {
     font-size: 14px;
 }
 
+/*
+    Styling for the fav-bar
+*/
+
+.fav-bar {
+    margin: 0;
+}
+.fav-bar>.col {
+    padding: 0 !important;
+}
+
+.fav-row {
+    padding: 0 3.5px 0 3.5px !important;
+}
+
+.fav-icon {
+    padding: 7px 0 5px 0;
+}
+
 
 /*
     Styling for the spreads page
 */
+
+ul.collapsible {
+    margin-top: 0px;
+    border-top-width: 0px;
+}
 
 .collapsible-body {
 padding: 3px;
