@@ -50,6 +50,7 @@ ul.sidenav>li>a>i.align {
     Styling for the spreads page
 */
 
+
 ul.collapsible {
     margin-top: 0px;
     border-top-width: 0px;
@@ -71,15 +72,16 @@ padding: 3px;
 }
 
 #away-team {
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 
 #home-team {
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 
 #game-header {
     font-size: 12px;
+    margin-bottom: 10px;
 }
 
 #game {
@@ -89,5 +91,73 @@ padding: 3px;
 
 #spread-subcategory {
     margin: 5px 0px;
+}
+
+#lines {
+    padding: 0px 2.5px;
+}
+
+#away-team-bet-number {
+    padding: 0px 2.5px;
+}
+
+#away-team-logo {
+    padding: 0px 2.5px;
+}
+
+#away-team-name {
+    padding: 0px 2.5px;
+}
+
+#away-team-spread {
+    padding: 0px 2.5px;
+}
+
+#total-over {
+    padding: 0px 2.5px;
+}
+
+#away-team-odds {
+    padding: 0px 2.5px;
+}
+
+#home-team-bet-number {
+    padding: 0px 2.5px;
+}
+
+#home-team-logo {
+    padding: 0px 2.5px;
+}
+
+#home-team-name {
+    padding: 0px 2.5px;
+}
+
+#home-team-spread {
+    padding: 0px 2.5px;
+}
+
+#total-under {
+    padding: 0px 2.5px;
+}
+
+#home-team-odds {
+    padding: 0px 2.5px;
+}
+
+#game-date-time {
+    padding: 0px 2.5px;
+}
+
+#spread {
+    padding: 0px 2.5px;
+}
+
+#total {
+    padding: 0px 2.5px;
+}
+
+#odds {
+    padding: 0px 2.5px;
 }
 
