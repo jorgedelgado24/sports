@@ -93,6 +93,60 @@ padding: 3px;
     margin: 5px 0px;
 }
 
+#bet {
+margin: 5px 0px;
+border: 1px solid lightblue;
+}
+
+#my-account{
+    text-align: center;
+    background-color: #e57373;
+    border-radius: 5px;
+    color: white;
+}
+
+#available {
+    text-align: center;
+    border: 1px solid paleturquoise;
+}
+
+#pending {
+    text-align: center;
+    border: 1px solid paleturquoise;
+}
+
+#balance {
+    text-align: center;
+    border: 1px solid paleturquoise
+}
+
+#bet-type {
+    font-size: 10px;
+    text-align: center;
+    border-bottom: 1px solid lightblue;
+}
+#bet-date{
+    font-size: 10px;
+    text-align: center;
+    border-bottom: 1px solid lightblue;
+}
+
+#bet-id {
+    font-size: 10px;
+    text-align: center;
+    border-bottom: 1px solid lightblue;
+}
+
+#bet-name {
+    font-size: 12px;
+}
+
+#spread {
+    font-size: 12px;
+}
+
+#bet-game-time {
+    font-size: 12px;
 #lines {
     padding: 0px 2.5px;
 }
