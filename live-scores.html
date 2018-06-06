@@ -20,13 +20,13 @@
 
 <body>
     <!-- START Body -->
-       <!-- START Header -->
-       <nav>
-            <div class="nav-wrapper">
-                <div class="brand-logo row">
-                    Playbook
-    
-                    <!--
+    <!-- START Header -->
+    <nav>
+        <div class="nav-wrapper">
+            <div class="brand-logo row">
+                Playbook
+
+                <!--
                     <div class="row">
                         <div class="col s12">current bets:</div>
                         <div class="clearfix"></div>
@@ -35,96 +35,90 @@
                         <div class="col s12">available balance:</div>
                     </div>
                     -->
-                </div>
-                <a href="pending-tickets.html" class="right"><i class="material-icons">playlist_add_check</i></a>
-                <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Sports Book</a></li>
-                    <li><a href="pending-tickets.html">Confirm Tickets</a></li>
-                    <li><a href="current-tickets.html">Current Bets & Balances</a></li>
-                    <li><a href="#">Live Scores</a></li>
-                    <li><a href="favorites.html">Choose Favorites</a></li>
-                    <li><a href="settings.html">Settings</a></li>
-                </ul>
             </div>
-        </nav>
-        
-        <!-- SideNav, for mobile, pulls from the left -->
-        <ul class="sidenav" id="mobile">
-            <li>
-                <div class="user-view">
-                    <div class="background">
-                        <img src="assets/img/field.png">
-                    </div>
-                    <a href="#"><img class="circle" src="assets/img/user.svg"></a>
-                    <a href="#"><span class="white-text name">John Doe</span></a>
+            <a href="pending-tickets.html" class="right">
+                <i class="material-icons">playlist_add_check</i>
+            </a>
+            <a href="#" data-target="mobile" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="index.html">Sports Book</a>
+                </li>
+                <li>
+                    <a href="pending-tickets.html">Confirm Tickets</a>
+                </li>
+                <li>
+                    <a href="current-tickets.html">Current Bets & Balances</a>
+                </li>
+                <li>
+                    <a href="#">Live Scores</a>
+                </li>
+                <li>
+                    <a href="favorites.html">Choose Favorites</a>
+                </li>
+                <li>
+                    <a href="settings.html">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SideNav, for mobile, pulls from the left -->
+    <ul class="sidenav" id="mobile">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="assets/img/field.png">
                 </div>
-            </li>
-            <li><a href="index.html"><i class="material-icons">home</i>Sports Book</a></li>
-            <li><a href="pending-tickets.html"><i class="material-icons align">playlist_add_check</i>Confirm Tickets</a></li>
-            <li><a href="current-tickets.html"><i class="material-icons">view_headline</i>Open Tickets & Balances</a></li>
-            <li><a href="#"><i class="material-icons">videocam</i>Live Scores</a></li>
-            <li><a href="favorites.html"><i class="material-icons">star</i>Choose Favorites</a></li>
-            <li><a href="settings.html"><i class="material-icons">settings</i>Settings</a></li>
-        </ul>
-        <!-- END Header -->
+                <a href="#">
+                    <img class="circle" src="assets/img/user.svg">
+                </a>
+                <a href="#">
+                    <span class="white-text name">John Doe</span>
+                </a>
+            </div>
+        </li>
+        <li>
+            <a href="index.html">
+                <i class="material-icons">home</i>Sports Book</a>
+        </li>
+        <li>
+            <a href="pending-tickets.html">
+                <i class="material-icons align">playlist_add_check</i>Confirm Tickets</a>
+        </li>
+        <li>
+            <a href="current-tickets.html">
+                <i class="material-icons">view_headline</i>Open Tickets & Balances</a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="material-icons">videocam</i>Live Scores</a>
+        </li>
+        <li>
+            <a href="favorites.html">
+                <i class="material-icons">star</i>Choose Favorites</a>
+        </li>
+        <li>
+            <a href="settings.html">
+                <i class="material-icons">settings</i>Settings</a>
+        </li>
+    </ul>
+    <!-- END Header -->
 
     <!-- START Main-->
 
     <ul class="collapsible">
         <li>
             <div class="collapsible-header">
-                <i class="material-icons">filter_drama</i>MLB</div>
-            <div class="collapsible-body">
-                <span>
-                    <hr>
-                    <div class="row" id="away-team">
-                        <div class="col s2" id="away-team-logo">Logo</div>
-                        <div class="col s6" id="away-team-name">Name</div>
-                        <div class="col s2" id="away-team-score">Score</div>
-                        <div class="col s2" id="game-time">Time</div>
-                        <div class="clearfix"></div>
-
-                        <div class="row" id="home-team">
-                            <div class="col s2" id="home-team-logo">Logo</div>
-                            <div class="col s6" id="home-team-name">Name</div>
-                            <div class="col s2" id="home-team-score">Score</div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row" id="away-team">
-                        <div class="col s2" id="away-team-logo">Logo</div>
-                        <div class="col s6" id="away-team-name">Name</div>
-                        <div class="col s2" id="away-team-score">Score</div>
-                        <div class="col s2" id="game-time">Time</div>
-                        <div class="clearfix"></div>
-
-                        <div class="row" id="home-team">
-                            <div class="col s2" id="home-team-logo">Logo</div>
-                            <div class="col s6" id="home-team-name">Name</div>
-                            <div class="col s2" id="home-team-score">Score</div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row" id="away-team">
-                        <div class="col s2" id="away-team-logo">Logo</div>
-                        <div class="col s6" id="away-team-name">Name</div>
-                        <div class="col s2" id="away-team-score">Score</div>
-                        <div class="col s2" id="game-time">Time</div>
-                        <div class="clearfix"></div>
-
-                        <div class="row" id="home-team">
-                            <div class="col s2" id="home-team-logo">Logo</div>
-                            <div class="col s6" id="home-team-name">Name</div>
-                            <div class="col s2" id="home-team-score">Score</div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <hr>
+                <i class="material-icons">filter_drama</i>MLB
             </div>
-            </span>
+            <div class="collapsible-body">                       
+                <div class="row" id="mlbContainer">
+                    
+                </div>
+                <div class="clearfix"></div>
             </div>
         </li>
         <li>
@@ -134,25 +128,25 @@
                 <span>
                     <hr>
                     <div class="row" id="away-team">
-                        <div class="col s2" id="away-team-logo">
-                            Logo
-                        </div>
-                        <div class="col s6" id="away-team-name">Name</div>
-                        <div class="col s2" id="away-team-score">Score</div>
-                        <div class="col s2" id="game-time">Time</div>
-                        <div class="clearfix"></div>
+                        <!-- <div class="col s2" id="away-team-logo"> -->
+                            <!-- Logo -->
+                        <!-- </div> -->
+                        <!-- <div class="col s6" id="away-team-name">Name</div> -->
+                        <!-- <div class="col s2" id="away-team-score">Score</div> -->
+                        <!-- <div class="col s2" id="game-time">Time</div> -->
+                        <!-- <div class="clearfix"></div> -->
 
-                        <div class="row" id="home-team">
-                            <div class="col s2" id="home-team-logo">
+                        <!-- <div class="row" id="home-team"> -->
+                            <!-- <div class="col s2" id="home-team-logo">
                                 Logo
                             </div>
                             <div class="col s6" id="home-team-name">Name</div>
                             <div class="col s2" id="home-team-score">Score</div>
-                            <div class="clearfix"></div>
+                            <div class="clearfix"></div> -->
                         </div>
                         <hr>
                 </span>
-                </div>
+            </div>
         </li>
         <li>
             <div class="collapsible-header">
@@ -161,21 +155,22 @@
                 <span>
                     <hr>
                     <div class="row" id="away-team">
-                        <div class="col s2" id="away-team-logo">Logo</div>
-                        <div class="col s6" id="away-team-name">Name</div>
+                        <!-- <div class="col s2" id="away-team-logo">Logo</div> -->
+                        <!-- <div class="col s6" id="away-team-name">Name</div>
                         <div class="col s2" id="away-team-score">Score</div>
-                        <div class="col s2" id="game-time">Time</div>
-                        <div class="clearfix"></div>
+                        <div class="col s2" id="game-time">Time</div> --> 
+                        <!-- <div class="clearfix"></div> -->
 
-                        <div class="row" id="home-team">
+                        <!-- <div class="row" id="home-team">
                             <div class="col s2" id="home-team-logo">Logo</div>
                             <div class="col s6" id="home-team-name">Name</div>
                             <div class="col s2" id="home-team-score">Score</div>
                             <div class="clearfix"></div>
-                        </div>
+                    <!-- </div> -->
+                    </div>
                         <hr>
                 </span>
-                </div>
+            </div>
         </li>
     </ul>
 
@@ -199,7 +194,7 @@
     <!-- Local JS file; Not compiled nor minified -->
     <script src="assets/js/app.js"></script>
     <!-- Local JS file -->
-    <script src ="live-scores-api.js"></script>
+    <script src="live-scores-api.js"></script>
 
 </body>
 
