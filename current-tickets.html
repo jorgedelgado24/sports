@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Local CSS file; Not compiled nor minified -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
 </head>
 
 <body>
-<!-- START Body -->
+    <!-- START Body -->
     <!-- START Header -->
     <nav>
         <div class="nav-wrapper">
@@ -33,19 +34,35 @@
                 </div>
                 -->
             </div>
-            <a href="pending-tickets.html" class="right"><i class="material-icons">playlist_add_check</i></a>
-            <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a href="pending-tickets.html" class="right">
+                <i class="material-icons">playlist_add_check</i>
+            </a>
+            <a href="#" data-target="mobile" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="index.html">Sports Book</a></li>
-                <li><a href="pending-tickets.html">Confirm Tickets</a></li>
-                <li><a href="#">Current Bets & Balances</a></li>
-                <li><a href="live-scores.html">Live Scores</a></li>
-                <li><a href="favorites.html">Choose Favorites</a></li>
-                <li><a href="settings.html">Settings</a></li>
+                <li>
+                    <a href="index.html">Sports Book</a>
+                </li>
+                <li>
+                    <a href="pending-tickets.html">Confirm Tickets</a>
+                </li>
+                <li>
+                    <a href="#">Current Bets & Balances</a>
+                </li>
+                <li>
+                    <a href="live-scores.html">Live Scores</a>
+                </li>
+                <li>
+                    <a href="favorites.html">Choose Favorites</a>
+                </li>
+                <li>
+                    <a href="settings.html">Settings</a>
+                </li>
             </ul>
         </div>
     </nav>
-    
+
     <!-- SideNav, for mobile, pulls from the left -->
     <ul class="sidenav" id="mobile">
         <li>
@@ -53,20 +70,121 @@
                 <div class="background">
                     <img src="assets/img/field.png">
                 </div>
-                <a href="#"><img class="circle" src="assets/img/user.svg"></a>
-                <a href="#"><span class="white-text name">John Doe</span></a>
+                <a href="#">
+                    <img class="circle" src="assets/img/user.svg">
+                </a>
+                <a href="#">
+                    <span class="white-text name">John Doe</span>
+                </a>
             </div>
         </li>
-        <li><a href="index.html"><i class="material-icons">home</i>Sports Book</a></li>
-        <li><a href="pending-tickets.html"><i class="material-icons align">playlist_add_check</i>Confirm Tickets</a></li>
-        <li><a href="#"><i class="material-icons">view_headline</i>Open Tickets & Balances</a></li>
-        <li><a href="live-scores.html"><i class="material-icons">videocam</i>Live Scores</a></li>
-        <li><a href="favorites.html"><i class="material-icons">star</i>Choose Favorites</a></li>
-        <li><a href="settings.html"><i class="material-icons">settings</i>Settings</a></li>
+        <li>
+            <a href="index.html">
+                <i class="material-icons">home</i>Sports Book</a>
+        </li>
+        <li>
+            <a href="pending-tickets.html">
+                <i class="material-icons align">playlist_add_check</i>Confirm Tickets</a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="material-icons">view_headline</i>Open Tickets & Balances</a>
+        </li>
+        <li>
+            <a href="live-scores.html">
+                <i class="material-icons">videocam</i>Live Scores</a>
+        </li>
+        <li>
+            <a href="favorites.html">
+                <i class="material-icons">star</i>Choose Favorites</a>
+        </li>
+        <li>
+            <a href="settings.html">
+                <i class="material-icons">settings</i>Settings</a>
+        </li>
     </ul>
     <!-- END Header -->
 
     <!-- START Main-->
+    <br>
+    <div class="row" id="my-account">My Account: 39234902</div>
+    <div class="row" id="available-pending">
+        <div class="col s6" id="available">Available: 500.32</div>
+        <div class="col s6" id="pending">Pending: 43.32</div>
+        <div class="col s6" id="balance">Balance: 1000.50</div>
+    </div>
+
+    <div class="row" id="bet">
+        <div class="col s4" id="bet-type">STRAIGHT</div>
+        <div class="col s4" id="bet-date">05/29/18 09:55</div>
+        <div class="col s4" id="bet-id">14898368362-1</div>
+        <br>
+        <div class="col s2" id="bet-logo">
+            <img src="assets/img/NBA/Cleveland Cavaliers.png" width="45px" height="25px">
+        </div>
+        <div class="col s4" id="bet-name">Cleveland Cavaliers</div>
+        <div class="col s3" id="spread">+11.5 -110</div>
+        <div class="col s3" id="bet-game-time">03/06/18 7:00 PM</div>
+        <div class="clearfix"></div>
+
+        <br>
+
+        <div class="row" id="risk-win">
+            <div class="col s4" id="risk">Risk: 30.00</div>
+            <div class="col s6" id="to-win">To Win: 28.34</div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <br>
+    <div class="row" id="bet">
+        <div class="col s4" id="bet-type">STRAIGHT</div>
+        <div class="col s4" id="bet-date">05/29/18 09:55</div>
+        <div class="col s4" id="bet-id">14898368362-1</div>
+        <br>
+        <div class="col s2" id="bet-logo">
+            <img src="assets/img/NFL/Miami Dolphins.png" width="45px" height="35px">
+        </div>
+        <div class="col s4" id="bet-name">Miami Dolphins</div>
+        <div class="col s3" id="spread">+13.5 -110</div>
+        <div class="col s3" id="bet-game-time">03/09/18 12:00 PM</div>
+        <div class="clearfix"></div>
+        <br>
+        <div class="row" id="risk-win">
+            <div class="col s4" id="risk">Risk: 45.00</div>
+            <div class="col s6" id="to-win">To Win: 43.56</div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row" id="bet">
+        <div class="col s4" id="bet-type">PARLAY</div>
+        <div class="col s4" id="bet-date">05/29/18 09:55</div>
+        <div class="col s4" id="bet-id">14898368362-1</div>
+        <br>
+        <div class="col s2" id="bet-logo">
+            <img src="assets/img/NBA/Cleveland Cavaliers.png" width="45px" height="25px">
+        </div>
+        <div class="col s4" id="bet-name">Cleveland Cavaliers</div>
+        <div class="col s3" id="spread">+11.5 -110</div>
+        <div class="col s3" id="bet-game-time">03/06/18 7:00 PM</div>
+        <div class="clearfix"></div>
+        <br>
+        <div class="col s2" id="bet-logo">
+            <img src="assets/img/NFL/Miami Dolphins.png" width="45px" height="35px">
+        </div>
+        <div class="col s4" id="bet-name">Miami Dolphins</div>
+        <div class="col s3" id="spread">+13.5 -110</div>
+        <div class="col s3" id="bet-game-time">03/09/18 12:00 PM</div>
+        <div class="clearfix"></div>
+        <br>
+        <div class="row" id="risk-win">
+            <div class="col s4" id="risk">Risk: 30.00</div>
+            <div class="col s6" id="to-win">To Win: 57.89</div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
 
     <!-- END Main -->
 

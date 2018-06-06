@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Local CSS file; Not compiled nor minified -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
 </head>
 
 <body>
-<!-- START Body -->
+    <!-- START Body -->
     <!-- START Header -->
     <nav>
         <div class="nav-wrapper">
@@ -33,19 +34,35 @@
                 </div>
                 -->
             </div>
-            <a href="pending-tickets.html" class="right"><i class="material-icons">playlist_add_check</i></a>
-            <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a href="pending-tickets.html" class="right">
+                <i class="material-icons">playlist_add_check</i>
+            </a>
+            <a href="#" data-target="mobile" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="index.html">Sports Book</a></li>
-                <li><a href="#">Confirm Tickets</a></li>
-                <li><a href="current-tickets.html">Current Bets & Balances</a></li>
-                <li><a href="live-scores.html">Live Scores</a></li>
-                <li><a href="favorites.html">Choose Favorites</a></li>
-                <li><a href="settings.html">Settings</a></li>
+                <li>
+                    <a href="index.html">Sports Book</a>
+                </li>
+                <li>
+                    <a href="#">Confirm Tickets</a>
+                </li>
+                <li>
+                    <a href="current-tickets.html">Current Bets & Balances</a>
+                </li>
+                <li>
+                    <a href="live-scores.html">Live Scores</a>
+                </li>
+                <li>
+                    <a href="favorites.html">Choose Favorites</a>
+                </li>
+                <li>
+                    <a href="settings.html">Settings</a>
+                </li>
             </ul>
         </div>
     </nav>
-    
+
     <!-- SideNav, for mobile, pulls from the left -->
     <ul class="sidenav" id="mobile">
         <li>
@@ -53,21 +70,126 @@
                 <div class="background">
                     <img src="assets/img/field.png">
                 </div>
-                <a href="#"><img class="circle" src="assets/img/user.svg"></a>
-                <a href="#"><span class="white-text name">John Doe</span></a>
+                <a href="#">
+                    <img class="circle" src="assets/img/user.svg">
+                </a>
+                <a href="#">
+                    <span class="white-text name">John Doe</span>
+                </a>
             </div>
         </li>
-        <li><a href="index.html"><i class="material-icons">home</i>Sports Book</a></li>
-        <li><a href="#"><i class="material-icons align">playlist_add_check</i>Confirm Tickets</a></li>
-        <li><a href="current-tickets.html"><i class="material-icons">view_headline</i>Open Tickets & Balances</a></li>
-        <li><a href="live-scores.html"><i class="material-icons">videocam</i>Live Scores</a></li>
-        <li><a href="favorites.html"><i class="material-icons">star</i>Choose Favorites</a></li>
-        <li><a href="settings.html"><i class="material-icons">settings</i>Settings</a></li>
+        <li>
+            <a href="index.html">
+                <i class="material-icons">home</i>Sports Book</a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="material-icons align">playlist_add_check</i>Confirm Tickets</a>
+        </li>
+        <li>
+            <a href="current-tickets.html">
+                <i class="material-icons">view_headline</i>Open Tickets & Balances</a>
+        </li>
+        <li>
+            <a href="live-scores.html">
+                <i class="material-icons">videocam</i>Live Scores</a>
+        </li>
+        <li>
+            <a href="favorites.html">
+                <i class="material-icons">star</i>Choose Favorites</a>
+        </li>
+        <li>
+            <a href="settings.html">
+                <i class="material-icons">settings</i>Settings</a>
+        </li>
     </ul>
     <!-- END Header -->
 
     <!-- START Main-->
+    <div class="row" id="bet">
+        <div class="col s4" id="bet-type">STRAIGHT</div>
+        <div class="col s4" id="bet-date">05/29/18 09:55</div>
+        <div class="col s4" id="bet-id">14898368362-1</div>
+        <br>
+        <div class="col s2" id="bet-logo">
+            <img src="assets/img/NBA/Cleveland Cavaliers.png" width="45px" height="25px">
+        </div>
+        <div class="col s4" id="bet-name">Cleveland Cavaliers</div>
+        <div class="col s3" id="spread">+11.5 -110</div>
+        <div class="col s3" id="bet-game-time">03/06/18 7:00 PM</div>
+        <div class="clearfix"></div>
 
+        <br>
+
+        <div class="row" id="risk-win-straight">
+            <div class="col s6" id="risk">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="bet-amount-straight" type="text" class="validate">
+                                <label for="bet-amount-straight">Your Risk</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="to-win" type="tel" class="validate">
+                                <label for="to-win">To Win</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row" id="bet">
+        <div class="col s4" id="bet-type">PARLAY</div>
+        <div class="col s4" id="bet-date">05/29/18 09:55</div>
+        <div class="col s4" id="bet-id">14898368362-1</div>
+        <br>
+        <div class="col s2" id="bet-logo">
+            <img src="assets/img/NBA/Cleveland Cavaliers.png" width="45px" height="25px">
+        </div>
+        <div class="col s4" id="bet-name">Cleveland Cavaliers</div>
+        <div class="col s3" id="spread">+11.5 -110</div>
+        <div class="col s3" id="bet-game-time">03/06/18 7:00 PM</div>
+        <div class="clearfix"></div>
+        <br>
+        <div class="col s2" id="bet-logo">
+            <img src="assets/img/NFL/Miami Dolphins.png" width="45px" height="35px">
+        </div>
+        <div class="col s4" id="bet-name">Miami Dolphins</div>
+        <div class="col s3" id="spread">+13.5 -110</div>
+        <div class="col s3" id="bet-game-time">03/09/18 12:00 PM</div>
+        <div class="clearfix"></div>
+
+        <br>
+        <div class="row" id="risk-win-parlay">
+            <div class="col s6" id="risk">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="bet-amount-parlay" type="text" class="validate">
+                                <label for="bet-amount-parlay">Your Risk</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="to-win-parlay" type="tel" class="validate">
+                                <label for="to-win-parlay">To Win</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <button class="btn waves-effect waves-light" id="myBtn" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+    </button>
+        
+    
+    
+    <br>
     <!-- END Main -->
 
     <!-- START Footer -->
