@@ -45,6 +45,10 @@ ul.sidenav>li>a>i.align {
     padding: 7px 0 5px 0;
 }
 
+.fav-button {
+    font-size: .8rem;
+}
+
 
 /*
     Styling for the spreads page
