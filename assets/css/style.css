@@ -26,10 +26,35 @@ ul.sidenav>li>a>i.align {
     font-size: 14px;
 }
 
+/*
+    Styling for the fav-bar
+*/
+
+.fav-bar {
+    margin: 0;
+}
+.fav-bar>.col {
+    padding: 0 !important;
+}
+
+.fav-row {
+    padding: 0 3.5px 0 3.5px !important;
+}
+
+.fav-icon {
+    padding: 7px 0 5px 0;
+}
+
 
 /*
     Styling for the spreads page
 */
+
+
+ul.collapsible {
+    margin-top: 0px;
+    border-top-width: 0px;
+}
 
 .collapsible-body {
 padding: 3px;
@@ -47,15 +72,16 @@ padding: 3px;
 }
 
 #away-team {
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 
 #home-team {
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 
 #game-header {
     font-size: 12px;
+    margin-bottom: 10px;
 }
 
 #game {
@@ -65,5 +91,129 @@ padding: 3px;
 
 #spread-subcategory {
     margin: 5px 0px;
+}
+
+#bet {
+margin: 5px 0px;
+border: 1px solid lightblue;
+}
+
+#my-account{
+    text-align: center;
+    background-color: #e57373;
+    border-radius: 5px;
+    color: white;
+}
+
+#available {
+    text-align: center;
+    border: 1px solid paleturquoise;
+}
+
+#pending {
+    text-align: center;
+    border: 1px solid paleturquoise;
+}
+
+#balance {
+    text-align: center;
+    border: 1px solid paleturquoise
+}
+
+#bet-type {
+    font-size: 10px;
+    text-align: center;
+    border-bottom: 1px solid lightblue;
+}
+#bet-date{
+    font-size: 10px;
+    text-align: center;
+    border-bottom: 1px solid lightblue;
+}
+
+#bet-id {
+    font-size: 10px;
+    text-align: center;
+    border-bottom: 1px solid lightblue;
+}
+
+#bet-name {
+    font-size: 12px;
+}
+
+#spread {
+    font-size: 12px;
+}
+
+#bet-game-time {
+    font-size: 12px;
+}
+
+#lines {
+    padding: 0px 2.5px;
+}
+
+#away-team-bet-number {
+    padding: 0px 2.5px;
+}
+
+#away-team-logo {
+    padding: 0px 2.5px;
+}
+
+#away-team-name {
+    padding: 0px 2.5px;
+}
+
+#away-team-spread {
+    padding: 0px 2.5px;
+}
+
+#total-over {
+    padding: 0px 2.5px;
+}
+
+#away-team-odds {
+    padding: 0px 2.5px;
+}
+
+#home-team-bet-number {
+    padding: 0px 2.5px;
+}
+
+#home-team-logo {
+    padding: 0px 2.5px;
+}
+
+#home-team-name {
+    padding: 0px 2.5px;
+}
+
+#home-team-spread {
+    padding: 0px 2.5px;
+}
+
+#total-under {
+    padding: 0px 2.5px;
+}
+
+#home-team-odds {
+    padding: 0px 2.5px;
+}
+
+#game-date-time {
+    padding: 0px 2.5px;
+}
+
+#spread {
+    padding: 0px 2.5px;
+}
+
+#total {
+    padding: 0px 2.5px;
+}
+
+#odds {
+    padding: 0px 2.5px;
 }
 
