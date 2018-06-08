@@ -9,72 +9,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <!-- Google Icon Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Firebase UI CSS -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.css" />
     <!-- Local CSS file; Not compiled nor minified -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="light-blue lighten-3">
+<body id="login-ui">
 <!-- START Body -->
     <!-- START Header -->
     <!-- END Header -->
 
     <!-- START Main-->
-                                                <!-- TODO: vertical align in the middle-->
-    <div class="container">
-        <div class="section">
-            <div class="col s12 z-depth-5 card-panel">
-                <form>
-
-                    <div class="row">
-                        <div class="col s12 center">
-                            <p class="center">Playbook: Sportsbook and Bets</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col s1"></div>
-                        <div class="col s1">
-                            <i class="material-icons login">assignment_ind</i>
-                        </div>
-                        <div class="col s1"></div>
-                        <div class="col s7 input-field">
-                            <input id="userId" type="text">
-                            <label for="userId">User ID</label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col s1"></div>
-                        <div class="col s1">
-                            <i class="material-icons login">lock</i>
-                        </div>
-                        <div class="col s1"></div>
-                        <div class="col s7 input-field">
-                            <input id="password" type="password">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-
-                    <div class="clearfix"></div>
-
-                    <div class="row">          
-                        <label class="input-field col s11 center-align">
-                            <input id="remember-me" type="checkbox" />
-                            <span for="remember-me">Remember me</span>
-                        </label>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                        <a href="index.html" class="btn waves-effect waves-light col s12">Login</a>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-
     <!-- END Main -->
 
     <!-- START Footer -->
@@ -87,7 +32,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Moments JS CDN; Compiled and minified  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <!-- Firebase JS CDN; -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <!-- Firebase UI JS CDN; -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.js"></script>
     <!-- Local JS file; Not compiled nor minified -->
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/login.js"></script>
 </body>
 </html>
