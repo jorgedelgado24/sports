@@ -93,10 +93,12 @@ padding: 3px;
     margin: 5px 0px;
 }
 
-#bet {
+#bet-specs {
 margin: 5px 0px;
 border: 1px solid lightblue;
 }
+
+
 
 #my-account{
     text-align: center;
@@ -141,7 +143,11 @@ border: 1px solid lightblue;
     font-size: 12px;
 }
 
-#spread {
+#bet{
+    border: 1px solid lightblue
+}
+
+#spread-specs {
     font-size: 12px;
 }
 
@@ -217,3 +223,29 @@ border: 1px solid lightblue;
     padding: 0px 2.5px;
 }
 
+#btnmodal{
+    margin-left: 64%;
+    margin-bottom: 20%;
+}
+
+#modal11 {
+    height: 350px;
+}
+
+#money-line {
+    font-size: 10px;
+}
+
+#quitar-margin {
+    margin: 0px;
+}
+
+
+
+.quitar-margin{
+    margin: 0px;
+}
+
+/* .container {
+    border: 1px solid lightblue;
+} */
