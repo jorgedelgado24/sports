@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     //Initialize the collapse function for the betting lines
     $(".collapsible").collapsible();
-    
+
     //Initialize the database
     var configFirebase = {
         apiKey: "AIzaSyDM_Q0lxG8Z1DBs02ldv3aoHH5xo_ZkSms",
@@ -38,7 +38,7 @@ $(document).ready(function () {
 //- - - -
 
     // --------------------- FUNCTIONS - START ---------------------
-    
+
     // --------------------- FUNCTIONS -   END ---------------------
 
     //Initialize the sidenav component for the mobile menu
