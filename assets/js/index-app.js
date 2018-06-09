@@ -74,6 +74,11 @@ $(document).ready(function () {
 
     });
 
+    $('#favs-modal-container').on('click', 'a', function(){
+        console.log(this);
+        console.log($(this));
+    });
+
     // --------------------- EVENT LISTENERS -   END ---------------------
 
     //- - - -
