@@ -23,42 +23,42 @@ $(document).ready(function () {
     //var database = firebase.database().ref("/categories/baseball/subcategories");
     // console.log(database);
     //bring the users data based on favorites sports choosen
-    baseSubsRef.on("child_added", function (snapshot) {
-        var baseSubCat = snapshot.val();
-        if (baseSubCat.name === "MLB") {
-            console.log("True");
-            $("#mlbContainer").show();
-        return fillBaseball();
-         } else { 
-           $("#toHideBase").hide();
-        }
-    });
+    //baseSubsRef.on("child_added", function (snapshot) {
+      //  var baseSubCat = snapshot.val();
+        //if (baseSubCat.name === "MLB") {
+          //  console.log("True");
+            //$("#mlbContainer").show();
+        //return fillBaseball();
+         //} else { 
+           //$("#toHideBase").hide();
+        //}
+    //});
 
-    footSubsRef.on("child_added", function (snapshot) {
-        var footSubCat = snapshot.val();
-        if(footSubCat.name === "NFL"){
-            console.log("trueF");
-            $("#nflContainer").show();
-        return fillFootball();
-        } else { 
-            $("#toHideFoot").hide();
-        }
-    });
+    //footSubsRef.on("child_added", function (snapshot) {
+      //  var footSubCat = snapshot.val();
+        //if(footSubCat.name === "NFL"){
+          //  console.log("trueF");
+            //$("#nflContainer").show();
+        //return fillFootball();
+        //} else { 
+          //  $("#toHideFoot").hide();
+       // }
+    //});
 
-    basketSubsRef.on("child_added", function (snapshot) {
-        var basketSubCat = snapshot.val();
-        if(basketSubCat.name === "NBA"){
-            console.log("TrueN");
-            $("#nbaContainer").show();
-        return fillBasket();
-       } else {
-           $("#toHideBasket").hide();
-        }
-    });
+    //basketSubsRef.on("child_added", function (snapshot) {
+      //  var basketSubCat = snapshot.val();
+        //if(basketSubCat.name === "NBA"){
+          //  console.log("TrueN");
+            //$("#nbaContainer").show();
+        //return fillBasket();
+       //} else {
+         //  $("#toHideBasket").hide();
+       // }
+    //});
 
     // Constructing a URL to search API for the favorite sport choose by user to reflect games, scores and time
 
-    function fillBaseball() {
+    //function fillBaseball() {
         var queryURLmlb = "https://api.mysportsfeeds.com/v1.2/pull/mlb/2017-regular/scoreboard.json?fordate=20170910";
         // Performing our AJAX GET request
         $.ajax({
@@ -168,9 +168,9 @@ $(document).ready(function () {
                     }
                 }
             })
-    }
+   // }
 
-    function fillFootball() {
+  //  function fillFootball() {
     var queryURL = "https://api.mysportsfeeds.com/v1.2/pull/nfl/2017-regular/scoreboard.json?fordate=20170910";
     // Performing our AJAX GET request
     $.ajax({
@@ -281,9 +281,9 @@ $(document).ready(function () {
                 }
             }
         })
-    }
+   //}
 
-    function fillBasket(){
+   // function fillBasket(){
     var queryURL = "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20171204";
     // Performing our AJAX GET request
     $.ajax({
@@ -394,6 +394,6 @@ $(document).ready(function () {
                 }
             }
         });
-    };
+   // };
 });
 
