@@ -116,8 +116,8 @@ $(document).ready(function () {
     }
 
     function modifyUserInfo() {
-        $('#user-picture').attr('src', userDbObject.photoURL);
-        $('#user-name').text(userDbObject.displayName);
+       // $('#user-picture').attr('src', userDbObject.photoURL);
+       // $('#user-name').text(userDbObject.displayName);
     }
 
     function favRowFiller() {
