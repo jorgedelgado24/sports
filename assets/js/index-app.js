@@ -4,7 +4,6 @@ $(document).ready(function () {
     //Initialize the database
     //load DB first to use it
 
-    /*
        
         var configFirebase = {
             apiKey: "AIzaSyDM_Q0lxG8Z1DBs02ldv3aoHH5xo_ZkSms",
@@ -19,7 +18,7 @@ $(document).ready(function () {
         //Verify if the user has logged in
         checkLoginStatus();
     
-    */
+   
 
     // --------------------- ON LOAD EVENTS -   END ---------------------
 
@@ -35,7 +34,7 @@ $(document).ready(function () {
     //Initialize the modal component for later usage
     $('.modal').modal();
 
-    /*
+  
         // --------------------- INITIALIZE COMPONENTS -   END ---------------------
     
         //- - - - 
@@ -179,7 +178,7 @@ $(document).ready(function () {
             //grey out (or remove?) the ones the user has, let him choose more
             //while user is choosing, it should be reflected immediately on the fav-bar
         }
-    */
+    
     // --------------------- FUNCTIONS -   END ---------------------
 
 
