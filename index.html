@@ -71,10 +71,10 @@
                     <img src="assets/img/field.png">
                 </div>
                 <a href="#">
-                    <img class="circle" src="assets/img/user.svg">
+                    <img class="circle" id="user-picture" src="assets/img/user.svg">
                 </a>
                 <a href="#">
-                    <span class="white-text name">John Doe</span>
+                    <span class="white-text name" id="user-name">John Doe</span>
                 </a>
             </div>
         </li>
@@ -112,7 +112,7 @@
                 <tbody>
                     <tr class="fav-row">
                         <td class="fav-icon">
-                            <a class="btn-floating btn-large waves-effect waves-light red fav-button modal-trigger" href="#favs-modal">Add</a>
+                            <a id="open-favs-modal" class="btn-floating btn-large waves-effect waves-light red fav-button modal-trigger" href="#favs-modal">Add</a>
                         </td>
                     </tr>
                 </tbody>
@@ -124,7 +124,7 @@
 
     <!-- START Main-->
     <div class="row col s12" id="spreads-page">
-        <ul class="collapsible">
+    <!--    <ul class="collapsible">
             <li>
                 <div class="collapsible-header">
                     <div class="col s2" id="category-logo">cat logo</div>
@@ -134,7 +134,7 @@
                     <div class="row" id="spread-subcategory">
 
                         <div class="row" id="game-header">
-                            <div class="col s1 offset-s1" id="category-logo">logo</div>
+                            <div class="col s1 offset-s1" id="category-logo-game-header">logo</div>
                             <div class="col s3" id="subcategory-name">MLB</div>
                             <div class="col s4" id="games-description">National League</div>
                             <div class="col s3" id="game-date">JUN 02</div>
@@ -143,7 +143,7 @@
                         <div class="row" id="game">
                             <div class="row" id="teams-header">
                                 <div class="col s5 text center" id="game-date-time">JUN 02 18:00 CST</div>
-                                <div class="col s7" id="lines">
+                                <div class="col s7" id="lines-header">
                                     <div class="col s4 text center" id="spread">Spread</div>
                                     <div class="col s5 text center" id="total">Total</div>
                                     <div class="col s3 text center" id="odds">Odds</div>
@@ -156,7 +156,7 @@
                                     <div class="col s1" id="away-team-bet-number">501</div>
                                     <div class="col s1" id="away-team-logo">logo</div>
                                     <div class="col s3" id="away-team-name">CHICAGO CUBS</div>
-                                    <div class="col s7" id="lines">
+                                    <div class="col s7" id="lines-away-team">
                                         <div class="col s4 text center" id="away-team-spread">-10.5 +140</div>
                                         <div class="col s5 text center" id="total-over">Ov 119.5 +105</div>
                                         <div class="col s3 text center" id="away-team-odds">-716</div>
@@ -168,7 +168,7 @@
                                     <div class="col s1" id="home-team-bet-number">502</div>
                                     <div class="col s1" id="home-team-logo">logo</div>
                                     <div class="col s3" id="home-team-name">NEW YORK METS</div>
-                                    <div class="col s7" id="lines">
+                                    <div class="col s7" id="lines-home-team">
                                         <div class="col s4 text center" id="home-team-spread">+10.5 -160</div>
                                         <div class="col s5 text center" id="total-under">Un 119.5 -125</div>
                                         <div class="col s3 text center" id="home-team-odds">+1104</div>
@@ -248,6 +248,7 @@
                     </div>
                 </div>
             </li>
+            <div class="clearfix"></div>
             <li>
                 <div class="collapsible-header">
                     <div class="col s1" id="category-logo">cat logo</div>
@@ -488,7 +489,7 @@
             </li>
         </ul>
     </div>
-
+-->
 
     <a class="btn-floating btn-large waves-effect waves-light red">
         <i class="material-icons">add</i>
@@ -501,9 +502,13 @@
     <!-- Modal Structure -->
     <div id="favs-modal" class="modal">
         <div class="modal-content">
-            <h4>Add your favorites!</h4>
+            <p>Add your favorites!</p>
             <div id="favs-modal-container">
-
+            <!--    <tr class="fav-row-1">
+                    <td class="fav-icon">
+                        <a class="btn-floating btn-large waves-effect waves-light red fav-button modal-trigger" href="#favs-modal">Add</a>
+                    </td>
+                </tr>    -->
             </div>
         </div>
         <div class="modal-footer">
@@ -526,7 +531,7 @@
     <!-- Firebase JS CDN; Compiled and minified -->
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
     <!-- Local JS file; Not compiled nor minified -->
-    <script src="assets/js/index-app.js"></script>
+    <script src="./assets/js/index-app.js"></script>
 </body>
 
 </html>
