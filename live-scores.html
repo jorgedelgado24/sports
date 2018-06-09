@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
     <!-- Firebase JavaScript Link -->
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
 </head>
 
@@ -112,35 +112,34 @@
     <!-- END Header -->
 
     <!-- START Main-->
+    <ul class="collapsible">
+    <li>
+        <div class="collapsible-header" id="toHideBase">
+            <i class="material-icons">filter_drama</i>MLB
+        </div>
+        <div class="collapsible-body">
+            <div class="row" id="mlbContainer">
+            </div>
+        </div>
+    </li>
 
-    <!--<ul class="collapsible">
-        <li>
-            <div class="collapsible-header">
-                <i class="material-icons">filter_drama</i>MLB
+    <li>
+        <div class="collapsible-header" id="toHideBasket">
+            <i class="material-icons">place</i>NBA</div>
+        <div class="collapsible-body">
+            <div class="row" id="nbaContainer">
             </div>
-            <div class="collapsible-body">                       
-                <div class="row" id="mlbContainer">
-                </div>
-            </div>
-        </li> !-->
+        </div>
+    </li>
 
-        <li>
-            <div class="collapsible-header">
-                <i class="material-icons">place</i>NBA</div>
-            <div class="collapsible-body">
-                    <div class="row" id="nbaContainer">
-                    </div>
+    <li>
+        <div class="collapsible-header" id="toHideFoot">
+            <i class="material-icons">whatshot</i>NFL</div>
+        <div class="collapsible-body">
+            <div class="row" id="nflContainer">
             </div>
-        </li>
-
-        <li>
-            <div class="collapsible-header">
-                <i class="material-icons">whatshot</i>NFL</div>
-            <div class="collapsible-body">
-                    <div class="row" id="nflContainer">
-                    </div>
-            </div>
-        </li>
+        </div>
+    </li>
     </ul>
 
 
