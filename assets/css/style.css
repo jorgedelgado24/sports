@@ -45,6 +45,10 @@ ul.sidenav>li>a>i.align {
     padding: 7px 0 5px 0;
 }
 
+.fav-button {
+    font-size: .8rem;
+}
+
 
 /*
     Styling for the spreads page
@@ -93,10 +97,12 @@ padding: 3px;
     margin: 5px 0px;
 }
 
-#bet {
+#bet-specs {
 margin: 5px 0px;
 border: 1px solid lightblue;
 }
+
+
 
 #my-account{
     text-align: center;
@@ -141,9 +147,15 @@ border: 1px solid lightblue;
     font-size: 12px;
 }
 
-#spread {
-    font-size: 12px;
+
+#bet{
+    border: 1px solid lightblue
 }
+
+#spread-specs {
+    font-size: 11px;
+}
+
 
 #bet-game-time {
     font-size: 12px;
@@ -217,3 +229,32 @@ border: 1px solid lightblue;
     padding: 0px 2.5px;
 }
 
+#btnmodal{
+    margin-left: 64%;
+    margin-bottom: 20%;
+}
+
+#modal11 {
+    height: 350px;
+}
+
+#money-line {
+    font-size: 10px;
+}
+
+#quitar-margin {
+    margin: 0px;
+}
+
+#team-logo {
+    width: 45px;
+    height: 25px;
+}
+
+.quitar-margin{
+    margin: 0px;
+}
+
+/* .container {
+    border: 1px solid lightblue;
+} */
