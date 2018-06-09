@@ -34,6 +34,9 @@ $(document).ready(function () {
     //Initialize the modal component for later usage
     $('.modal').modal();
 
+    //Initialize fixed floating button
+    $('.fixed-action-btn').floatingActionButton();
+
 
     // --------------------- INITIALIZE COMPONENTS -   END ---------------------
 
@@ -51,6 +54,8 @@ $(document).ready(function () {
 
     var globalUser;
 
+    var betAdded;
+
     // --------------------- GLOBAL VARIABLES -   END ---------------------
 
     //- - - - 
@@ -59,6 +64,14 @@ $(document).ready(function () {
 
     $('#open-favs-modal').on('click', function () {
         favModalFiller();
+    });
+
+    $(".lines-teams").on("click", ".line", function () {
+
+        $(this).addClass('light-blue lighten-3');
+        betAdded = true;
+        changeFloatButton();
+
     });
 
     // --------------------- EVENT LISTENERS -   END ---------------------
@@ -129,6 +142,12 @@ $(document).ready(function () {
         // $('#user-name').text(userDbObject.displayName);
     }
 
+    function changeFloatButton() {
+        if(betAdded) {
+            $("#add-bet-button").text("straight");
+        }
+    }
+
     function favRowFiller() {
 
         fullDB.ref('/users/' + userUniqueID + '/favorites').on("child_added", function (snapshot) {
@@ -148,6 +167,10 @@ $(document).ready(function () {
             //Apparently making an img inside the icon is not as easy as I thought, will leave buttons with text for now
 
         });
+    }
+
+    function addSubcategory() {
+        subcategories.push('MLB');
     }
 
     function favModalFiller() {
@@ -170,11 +193,12 @@ $(document).ready(function () {
                 //create inside the already created row
                 var td = $('<td>');
                 td.addClass('fav-icon');
-                td.attr('id', 'fav-icon-' + catIDadder);
+                td.attr('id', 'fav-icon-' + catName);
                 $('#fav-row-' + rowsAmmount).append(td);
 
                 var a = $('<a>');
                 a.addClass('btn-floating btn-large waves-effect waves-light red fav-button');
+                a.attr('onClick', 'addSubcategory()');
                 a.text(snapshot.val().name);
                 td.append(a);
 
@@ -205,7 +229,7 @@ $(document).ready(function () {
     //Just to complete the dynamic creation of the tables without using Firebase I'm creating some variables with the information I will be pulling from Firebase
     var categories = ["baseball"]
     var categoriesImages = ["baseball-icon"]
-    var subcategories = ["MLB"];
+    var subcategories = [];
 
     var date = "June 9";
     var gameDescription = "Regular Season";
@@ -466,7 +490,7 @@ $(document).ready(function () {
             // 4/4
             var linesAwayTeam = $("<div>");
             linesAwayTeam.addClass("col s7");
-            linesawayTeam.addClass("lines-teams");
+            linesAwayTeam.addClass("lines-teams");
             linesAwayTeam.attr("id", "lines-away-team");
 
             awayTeam.append(linesAwayTeam);
@@ -589,15 +613,5 @@ $(document).ready(function () {
 
     //append the whole collapsible div to the spreads-page id in the html
     $("#spreads-page").append(collapsible);
-
-
-
-
-    $(".lines-teams").on("click", ".line", function () {
-
-        var state = $(this).val();
-        console.log(state);
-
-    });
 
 });
