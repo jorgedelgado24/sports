@@ -1,9 +1,6 @@
 $(document).ready(function () {
     // --------------------- ON LOAD EVENTS - START ---------------------
 
-    //Initialize the collapse function for the betting lines
-    $(".collapsible").collapsible();
-
     //Initialize the database
     //load DB first to use it
     var configFirebase = {
@@ -50,37 +47,15 @@ $(document).ready(function () {
 
     var globalUser;
 
-    
-
-    /*Just to complete the dynamic creation of the tables without using Firebase I'm creating some variables with the information I will be pulling from Firebase
-    var categories = ["basketball", "baseball", "hockey", "football"]
-    var categoriesImages = ["basketball-icon", "baseball-icon", "hockey-icon", "football-icon"]
-    var subcategories = ["nba", "mlb", "nhl", "nfl"];
-    */
-
-
     // --------------------- GLOBAL VARIABLES -   END ---------------------
 
     //- - - - 
 
     // --------------------- EVENT LISTENERS - START ---------------------
 
-    //add-fav click listener, will open a modal that will pull Firebase data for favorites
-    /*$('.fav-button').on('click', function(){
-        //get all the user's categories
-        fullDatabase.ref('/users/'+userUniqueID+'/favorites').on("child_added", function(snapshot) {
-            //paint them dinamically
-        });
-    });*/
-
     $('#open-favs-modal').on('click', function(){
         favModalFiller();
     });
-
-    //onclick listener for the categories
-    //Opens function that hides the categories modals, and shows the respective subcat modals
-    //adds or removes the favorites on click
-
 
     // --------------------- EVENT LISTENERS -   END ---------------------
 
@@ -200,10 +175,8 @@ $(document).ready(function () {
         //while user is choosing, it should be reflected immediately on the fav-bar
     }
 
->>>>>>> origin/master
     // --------------------- FUNCTIONS -   END ---------------------
 
-});
 
 
 //Need to pull from fav bar (firebase) the favorite categories
@@ -569,3 +542,4 @@ for (i = 0; i < subcategories.length; i++) {
 //append the whole collapsible div to the spreads-page id in the html
 $("#spreads-page").append(collapsible);
 
+});
