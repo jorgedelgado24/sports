@@ -43,8 +43,14 @@ $(document).ready(function () {
     var fullDB = firebase.database();
     var usersDB = fullDB.ref('/users');
     var userOnDB = false;
-    var userDbInfo;
+
+    var userDbRef;
+    var userDbObject;
     var userUniqueID;
+
+    var globalUser;
+
+    
 
     /*Just to complete the dynamic creation of the tables without using Firebase I'm creating some variables with the information I will be pulling from Firebase
     var categories = ["basketball", "baseball", "hockey", "football"]
@@ -60,11 +66,15 @@ $(document).ready(function () {
     // --------------------- EVENT LISTENERS - START ---------------------
 
     //add-fav click listener, will open a modal that will pull Firebase data for favorites
-    $('.fav-button').on('click', function(){
-        //get all the categories
-        fullDatabase.ref('/tickets').on("child_added", function(snapshot) {
+    /*$('.fav-button').on('click', function(){
+        //get all the user's categories
+        fullDatabase.ref('/users/'+userUniqueID+'/favorites').on("child_added", function(snapshot) {
             //paint them dinamically
         });
+    });*/
+
+    $('#open-favs-modal').on('click', function(){
+        favModalFiller();
     });
 
     //onclick listener for the categories
@@ -84,27 +94,24 @@ $(document).ready(function () {
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 userOnDB = userIsLogged(user);
-                if (!userOnDB) {
+                if (userOnDB) {
+                    favRowFiller();
+                } else {
                     saveUserToDB(user);
                 }
             } else {
                 userIsNotLogged();
-                }
-            }, function(error) {
-                console.log("Problem getting auth data; Error: " + error);
+            }
         });
     }
 
     function userIsLogged(pUser) {
         userUniqueID = pUser.uid;
-        fullDB.ref('users/').child(userUniqueID).on("value", function(snapshot) {
-            userDbInfo = snapshot.val()
+        usersDB.child(userUniqueID).on("value", function(snapshot) {
+            userDbObject = snapshot.val()
             userOnDB = true;
-            favRowFiller(); //user is logged in and in the DB, fill the fav-row
-            return userOnDB;
-        }, function(error) {
-            console.log("Problem getting user from DB; Error: " + error);
         });
+        return userOnDB;
     }
 
     function userIsNotLogged() {
@@ -122,10 +129,9 @@ $(document).ready(function () {
             phoneNumber: pUser.phoneNumber,
             photoURL: pUser.photoURL,
             uid: pUser.uid,
-            accessToken: pUser.accessToken,
-            providerData: pUser.providerData
-        }, function(error) {
-            console.log("Problem saving user to the DB; Error: " + error);
+            refreshToken: pUser.refreshToken
+        }).then(() => {
+            favRowFiller();//Should work without this, but will have to do, for now
         });
     }
 
@@ -151,7 +157,44 @@ $(document).ready(function () {
     }
 
     function favModalFiller() {
-        //Get all the favorites from firebase
+        var insideModalSel = $("#favs-modal-container");
+        var rowsAmmount = 1;
+        var catIDadder = 1;
+        var catCounter = 0;
+        var maxLatCats = 4;
+
+        var tr = $('<tr>');
+        tr.addClass('fav-row');
+        tr.attr('id', 'fav-row-'+rowsAmmount)
+        insideModalSel.append(tr);
+
+        //Get all the categories from firebase
+        fullDB.ref('/categories').on("child_added", function(snapshot) {
+            var catName = snapshot.val().name;
+            catCounter++;
+            if (catCounter < maxLatCats) {
+                //create inside the already created row
+                var td = $('<td>');
+                td.addClass('fav-icon');
+                td.attr('id', 'fav-icon-'+catIDadder);
+                $('#fav-row-'+rowsAmmount).append(td);
+
+                var a = $('<a>');
+                a.addClass('btn-floating btn-large waves-effect waves-light red fav-button');
+                a.text(snapshot.val().name);
+                td.append(a);
+
+            } else {
+                catCounter = 1;
+                rowsAmmount++;
+
+                tr = $('<tr>');
+                tr.addClass('fav-row');
+                tr.attr('id', 'fav-row-'+rowsAmmount)
+                insideModalSel.append(tr);
+            }
+
+        });
         //Check which favorites the user has
         //grey out (or remove?) the ones the user has, let him choose more
         //while user is choosing, it should be reflected immediately on the fav-bar
