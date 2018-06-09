@@ -210,7 +210,7 @@ for (i = 0; i < subcategories.length; i++) {
 
     //search in the API the subcategories in favorites tab
     var APIkey = "9569048c-ae00-4a84-903d-e74247a22568";
-    var queryURL = "https://jsonodds.com/api/odds/" + subcategories[i];
+    var queryURL = "http://jsonodds.com/api/odds/" + subcategories[i];
 
     //do the ajax call for the specific sports person
     $.ajax({
