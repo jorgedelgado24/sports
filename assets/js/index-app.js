@@ -4,21 +4,21 @@ $(document).ready(function () {
     //Initialize the database
     //load DB first to use it
 
-       
-        var configFirebase = {
-            apiKey: "AIzaSyDM_Q0lxG8Z1DBs02ldv3aoHH5xo_ZkSms",
-            authDomain: "sports-betting-8a570.firebaseapp.com",
-            databaseURL: "https://sports-betting-8a570.firebaseio.com",
-            projectId: "sports-betting-8a570",
-            storageBucket: "sports-betting-8a570.appspot.com",
-            messagingSenderId: "464520081859"
-        };
-        firebase.initializeApp(configFirebase);
-    
-        //Verify if the user has logged in
-        checkLoginStatus();
-    
-   
+
+    var configFirebase = {
+        apiKey: "AIzaSyDM_Q0lxG8Z1DBs02ldv3aoHH5xo_ZkSms",
+        authDomain: "sports-betting-8a570.firebaseapp.com",
+        databaseURL: "https://sports-betting-8a570.firebaseio.com",
+        projectId: "sports-betting-8a570",
+        storageBucket: "sports-betting-8a570.appspot.com",
+        messagingSenderId: "464520081859"
+    };
+    firebase.initializeApp(configFirebase);
+
+    //Verify if the user has logged in
+    checkLoginStatus();
+
+
 
     // --------------------- ON LOAD EVENTS -   END ---------------------
 
@@ -34,151 +34,166 @@ $(document).ready(function () {
     //Initialize the modal component for later usage
     $('.modal').modal();
 
-  
-        // --------------------- INITIALIZE COMPONENTS -   END ---------------------
-    
-        //- - - - 
-    
-        // --------------------- GLOBAL VARIABLES - START ---------------------
-    
-        var fullDB = firebase.database();
-        var usersDB = fullDB.ref('/users');
-        var userOnDB = false;
-    
-        var userDbRef;
-        var userDbObject;
-        var userUniqueID;
-    
-        var globalUser;
-    
-        // --------------------- GLOBAL VARIABLES -   END ---------------------
-    
-        //- - - - 
-    
-        // --------------------- EVENT LISTENERS - START ---------------------
-    
-        $('#open-favs-modal').on('click', function(){
-            favModalFiller();
-        });
-    
-        // --------------------- EVENT LISTENERS -   END ---------------------
-    
-        //- - - -
-    
-        // --------------------- FUNCTIONS - START ---------------------
-    
-    
-        //Verify the user's auth status
-        function checkLoginStatus() {
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
-                    userOnDB = userIsLogged(user);
-                    if (userOnDB) {
-                        favRowFiller();
-                    } else {
-                        saveUserToDB(user);
-                    }
+
+    // --------------------- INITIALIZE COMPONENTS -   END ---------------------
+
+    //- - - - 
+
+    // --------------------- GLOBAL VARIABLES - START ---------------------
+
+    var fullDB = firebase.database();
+    var usersDB = fullDB.ref('/users');
+    var userOnDB = false;
+
+    var userDbRef;
+    var userDbObject;
+    var userUniqueID;
+
+    var globalUser;
+
+    // --------------------- GLOBAL VARIABLES -   END ---------------------
+
+    //- - - - 
+
+    // --------------------- EVENT LISTENERS - START ---------------------
+
+    $('#open-favs-modal').on('click', function () {
+        favModalFiller();
+    });
+
+    // --------------------- EVENT LISTENERS -   END ---------------------
+
+    //- - - -
+
+    // --------------------- FUNCTIONS - START ---------------------
+
+
+    //Verify the user's auth status
+    function checkLoginStatus() {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                userOnDB = userIsLogged(user);
+                if (userOnDB) {
+                    favRowFiller();
                 } else {
-                    userIsNotLogged();
+                    saveUserToDB(user);
                 }
-            });
-        }
-    
-        function userIsLogged(pUser) {
-            userUniqueID = pUser.uid;
-            usersDB.child(userUniqueID).on("value", function(snapshot) {
+            } else {
+                userIsNotLogged();
+            }
+
+        });
+    }
+
+
+
+    function userIsLogged(pUser) {
+        userUniqueID = pUser.uid;
+        usersDB.child(userUniqueID).on("value", function (snapshot) {
+            userDbObject = snapshot.val()
+            userOnDB = true;
+        });
+        return userOnDB;
+    }
+
+    function userIsNotLogged() {
+        window.location.href = 'login.html';
+    }
+
+    function saveUserToDB(pUser) {
+        //grab pUser.id and save it's data to the DB
+        userUniqueID = pUser.uid;
+        fullDB.ref('/users').child(userUniqueID).set({
+            //save user to it's own node
+            displayName: pUser.displayName,
+            email: pUser.email,
+            emailVerified: pUser.emailVerified,
+            phoneNumber: pUser.phoneNumber,
+            photoURL: pUser.photoURL,
+            uid: pUser.uid,
+            refreshToken: pUser.refreshToken
+        }).then(() => {
+
+            usersDB.child(userUniqueID).on("value", function (snapshot) {
                 userDbObject = snapshot.val()
                 userOnDB = true;
             });
             return userOnDB;
-        }
-    
-        function userIsNotLogged() {
-            window.location.href='login.html';
-        }
-    
-        function saveUserToDB(pUser) {
-            //grab pUser.id and save it's data to the DB
-            userUniqueID = pUser.uid;
-            fullDB.ref('/users').child(userUniqueID).set({
-                //save user to it's own node
-                displayName: pUser.displayName,
-                email: pUser.email,
-                emailVerified: pUser.emailVerified,
-                phoneNumber: pUser.phoneNumber,
-                photoURL: pUser.photoURL,
-                uid: pUser.uid,
-                refreshToken: pUser.refreshToken
-            }).then(() => {
-                favRowFiller();//Should work without this, but will have to do, for now
-            });
-        }
-    
-        function favRowFiller() {
-    
-            fullDB.ref('/users/'+userUniqueID+'/favorites').on("child_added", function(snapshot){
-    
-                var oneFav = snapshot.val();
-    
-                var tdIcon = $('<td>');
-                tdIcon.addClass('fav-icon');
-                tdIcon.prepend($('.fav-row'));
-    
-                var aButton = $('<a>');
-                aButton.addClass('btn-floating btn-large fav-button');
-                aButton.text(oneFav.name);
-                aButton.append(tdIcon);
-    
-                //https://stackoverflow.com/questions/45733537/materializecss-using-icon-as-fab-button-featurediscovery
-                //Apparently making an img inside the icon is not as easy as I thought, will leave buttons with text for now
-    
-            }); 
-        }
-    
-        function favModalFiller() {
-            var insideModalSel = $("#favs-modal-container");
-            var rowsAmmount = 1;
-            var catIDadder = 1;
-            var catCounter = 0;
-            var maxLatCats = 4;
-    
-            var tr = $('<tr>');
-            tr.addClass('fav-row');
-            tr.attr('id', 'fav-row-'+rowsAmmount)
-            insideModalSel.append(tr);
-    
-            //Get all the categories from firebase
-            fullDB.ref('/categories').on("child_added", function(snapshot) {
-                var catName = snapshot.val().name;
-                catCounter++;
-                if (catCounter < maxLatCats) {
-                    //create inside the already created row
-                    var td = $('<td>');
-                    td.addClass('fav-icon');
-                    td.attr('id', 'fav-icon-'+catIDadder);
-                    $('#fav-row-'+rowsAmmount).append(td);
-    
-                    var a = $('<a>');
-                    a.addClass('btn-floating btn-large waves-effect waves-light red fav-button');
-                    a.text(snapshot.val().name);
-                    td.append(a);
-    
-                } else {
-                    catCounter = 1;
-                    rowsAmmount++;
-    
-                    tr = $('<tr>');
-                    tr.addClass('fav-row');
-                    tr.attr('id', 'fav-row-'+rowsAmmount)
-                    insideModalSel.append(tr);
-                }
-    
-            });
-            //Check which favorites the user has
-            //grey out (or remove?) the ones the user has, let him choose more
-            //while user is choosing, it should be reflected immediately on the fav-bar
-        }
-    
+        });
+    }
+
+
+
+    function modifyUserInfo() {
+        // $('#user-picture').attr('src', userDbObject.photoURL);
+        // $('#user-name').text(userDbObject.displayName);
+    }
+
+    function favRowFiller() {
+
+        fullDB.ref('/users/' + userUniqueID + '/favorites').on("child_added", function (snapshot) {
+
+            var oneFav = snapshot.val();
+
+            var tdIcon = $('<td>');
+            tdIcon.addClass('fav-icon');
+            tdIcon.prepend($('.fav-row'));
+
+            var aButton = $('<a>');
+            aButton.addClass('btn-floating btn-large fav-button');
+            aButton.text(oneFav.name);
+            aButton.append(tdIcon);
+
+            //https://stackoverflow.com/questions/45733537/materializecss-using-icon-as-fab-button-featurediscovery
+            //Apparently making an img inside the icon is not as easy as I thought, will leave buttons with text for now
+
+        });
+    }
+
+    function favModalFiller() {
+        var insideModalSel = $("#favs-modal-container");
+        var rowsAmmount = 1;
+        var catIDadder = 1;
+        var catCounter = 0;
+        var maxLatCats = 4;
+
+        var tr = $('<tr>');
+        tr.addClass('fav-row');
+        tr.attr('id', 'fav-row-' + rowsAmmount)
+        insideModalSel.append(tr);
+
+        //Get all the categories from firebase
+        fullDB.ref('/categories').on("child_added", function (snapshot) {
+            var catName = snapshot.val().name;
+            catCounter++;
+            if (catCounter < maxLatCats) {
+                //create inside the already created row
+                var td = $('<td>');
+                td.addClass('fav-icon');
+                td.attr('id', 'fav-icon-' + catIDadder);
+                $('#fav-row-' + rowsAmmount).append(td);
+
+                var a = $('<a>');
+                a.addClass('btn-floating btn-large waves-effect waves-light red fav-button');
+                a.text(snapshot.val().name);
+                td.append(a);
+
+            } else {
+                catCounter = 1;
+                rowsAmmount++;
+
+                tr = $('<tr>');
+                tr.addClass('fav-row');
+                tr.attr('id', 'fav-row-' + rowsAmmount)
+                insideModalSel.append(tr);
+            }
+
+        });
+        //Check which favorites the user has
+        //grey out (or remove?) the ones the user has, let him choose more
+        //while user is choosing, it should be reflected immediately on the fav-bar
+    }
+
     // --------------------- FUNCTIONS -   END ---------------------
 
 
@@ -271,76 +286,76 @@ $(document).ready(function () {
 
         collapsibleHeader.append(headerColSubcategory);
 
-        
-
-            //create the subcategory Body called collapsibleHeader and append it to the li... 2 of 2
-            var collapsibleBody = $("<div>");
-            collapsibleBody.addClass("bodybody");
-
-            li.append(collapsibleBody);
-
-            
-
-            //create the spreadSubcategory where we will have the game-header and game information
-            var spreadSubcategory = $("<div>");
-            spreadSubcategory.addClass("row");
-            spreadSubcategory.attr("id", "spread-subcategory");
-
-            collapsibleBody.append(spreadSubcategory);
-
-            //create the game-header that will be appended to spreadSubcategory. 1 of 2. and will hold the game header information
-            var gameHeader = $("<div>");
-            gameHeader.addClass("row");
-            gameHeader.attr("id", "game-header");
-
-            spreadSubcategory.append(gameHeader);
-
-            //create the columns that will go inside gameHeader. Column 1 of 4
-            var gameHeaderColLogo = $("<div>");
-            gameHeaderColLogo.addClass("col s1 offset-s1");
-            gameHeaderColLogo.attr("id", "category-logo-game-header");
-
-            gameHeader.append(gameHeaderColLogo);
-
-            //create the image that will go inside the gameHeaderColLogo
-            //var gameHeaderCategoryLogo = $("<img>");
-            //gameHeaderCategoryLogo.attr("src", "./assets/img/" + categoriesImages[i] + ".png");
-
-            //gameHeaderColLogo.append(gameHeaderCategoryLogo);
 
 
-            //column 2 of 4.. containing the name of the subcategory
-            var gameHeaderColSubcategory = $("<div>");
-            gameHeaderColSubcategory.addClass("col s3");
-            gameHeaderColSubcategory.attr("id", "subcategory-name-game-header");
-            gameHeaderColSubcategory.text(subcategories[i]);
+        //create the subcategory Body called collapsibleHeader and append it to the li... 2 of 2
+        var collapsibleBody = $("<div>");
+        collapsibleBody.addClass("bodybody");
 
-            gameHeader.append(gameHeaderColSubcategory);
-
-            //column 3 of 4.. containing the game details PULLED FROM API
-            var gameHeaderColGameDescription = $("<div>");
-            gameHeaderColGameDescription.addClass("col s4");
-            gameHeaderColGameDescription.attr("id", "game-description");
-            gameHeaderColGameDescription.text(gameDescription);
-
-            gameHeader.append(gameHeaderColGameDescription);
-
-            //column 4 of 4.. containing the game date PULLED FROM API
-            var gameHeaderColGameDate = $("<div>");
-            gameHeaderColGameDate.addClass("col s3");
-            gameHeaderColGameDate.attr("id", "game-date");
-            gameHeaderColGameDate.text(date);
-
-            gameHeader.append(gameHeaderColGameDate);
-
-            //clearfix gameHeader
-            var gameHeaderClearFix = $("<div>");
-            gameHeaderClearFix.addClass("clearfix");
-
-            gameHeader.append(gameHeaderClearFix);
+        li.append(collapsibleBody);
 
 
-            for (i = 0; i < hometeams.length; i++) {
+
+        //create the spreadSubcategory where we will have the game-header and game information
+        var spreadSubcategory = $("<div>");
+        spreadSubcategory.addClass("row");
+        spreadSubcategory.attr("id", "spread-subcategory");
+
+        collapsibleBody.append(spreadSubcategory);
+
+        //create the game-header that will be appended to spreadSubcategory. 1 of 2. and will hold the game header information
+        var gameHeader = $("<div>");
+        gameHeader.addClass("row");
+        gameHeader.attr("id", "game-header");
+
+        spreadSubcategory.append(gameHeader);
+
+        //create the columns that will go inside gameHeader. Column 1 of 4
+        var gameHeaderColLogo = $("<div>");
+        gameHeaderColLogo.addClass("col s1 offset-s1");
+        gameHeaderColLogo.attr("id", "category-logo-game-header");
+
+        gameHeader.append(gameHeaderColLogo);
+
+        //create the image that will go inside the gameHeaderColLogo
+        //var gameHeaderCategoryLogo = $("<img>");
+        //gameHeaderCategoryLogo.attr("src", "./assets/img/" + categoriesImages[i] + ".png");
+
+        //gameHeaderColLogo.append(gameHeaderCategoryLogo);
+
+
+        //column 2 of 4.. containing the name of the subcategory
+        var gameHeaderColSubcategory = $("<div>");
+        gameHeaderColSubcategory.addClass("col s3");
+        gameHeaderColSubcategory.attr("id", "subcategory-name-game-header");
+        gameHeaderColSubcategory.text(subcategories[i]);
+
+        gameHeader.append(gameHeaderColSubcategory);
+
+        //column 3 of 4.. containing the game details PULLED FROM API
+        var gameHeaderColGameDescription = $("<div>");
+        gameHeaderColGameDescription.addClass("col s4");
+        gameHeaderColGameDescription.attr("id", "game-description");
+        gameHeaderColGameDescription.text(gameDescription);
+
+        gameHeader.append(gameHeaderColGameDescription);
+
+        //column 4 of 4.. containing the game date PULLED FROM API
+        var gameHeaderColGameDate = $("<div>");
+        gameHeaderColGameDate.addClass("col s3");
+        gameHeaderColGameDate.attr("id", "game-date");
+        gameHeaderColGameDate.text(date);
+
+        gameHeader.append(gameHeaderColGameDate);
+
+        //clearfix gameHeader
+        var gameHeaderClearFix = $("<div>");
+        gameHeaderClearFix.addClass("clearfix");
+
+        gameHeader.append(gameHeaderClearFix);
+
+
+        for (i = 0; i < hometeams.length; i++) {
 
 
             //create the game div that will be appended to spreadSubcategory. 2 of 2 and will hold the game information
