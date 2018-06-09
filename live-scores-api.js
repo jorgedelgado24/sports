@@ -86,15 +86,15 @@ $(document).ready(function () {
                         var container = $("#mlbContainer");
                         // creating div and adding class and attribute to show away team logo
                         var logoDiv = $("<div>");
-                        logoDiv.addClass("col s2");
+                        logoDiv.addClass("col s1");
                         logoDiv.attr("id", "away-team-logo");
                         // creating div and adding class and attribute to show away team name    
                         var nameDiv = $("<div>");
-                        nameDiv.addClass("col s4");
+                        nameDiv.addClass("col s3");
                         nameDiv.attr("id", "away-team-name");
                         // creating div and adding class and attribute to show away team city    
                         var cityDiv = $("<div>");
-                        cityDiv.addClass("col s2");
+                        cityDiv.addClass("col s4");
                         cityDiv.attr("id", "away-team-city");
                         // creating div and adding class and attribute to show away team score    
                         var divScore = $("<div>");
@@ -106,15 +106,15 @@ $(document).ready(function () {
                         divGameTime.attr("id", "game-time");
                         // creating div and adding class and attribute to show home team logo    
                         var logoDivHome = $("<div>");
-                        logoDivHome.addClass("col s2");
+                        logoDivHome.addClass("col s1");
                         logoDivHome.attr("id", "home-team-logo");
                         // creating div and adding class and attribute to show home team name    
                         var nameDivHome = $("<div>");
-                        nameDivHome.addClass("col s4");
+                        nameDivHome.addClass("col s3");
                         nameDivHome.attr("id", "home-team-name");
                         // creating div and adding class and attribute to show home team city    
                         var cityDivHome = $("<div>");
-                        cityDivHome.addClass("col s2");
+                        cityDivHome.addClass("col s4");
                         cityDivHome.attr("id", "home-team-city");
                         // creating div and adding class and attribute to show home team score    
                         var divScoreHome = $("<div>");
@@ -139,9 +139,9 @@ $(document).ready(function () {
                         // calling game time in the DOM
                         divGameTime.text("Time " + results[i].game.time);
                         // calling away team logo in the DOM
-                        logoDiv.text("AwayLogoTeam");
+                        //logoDiv.text("AwayLogoTeam");
                         // calling home team logo in the DOM
-                        logoDivHome.text("HomeLogoTeam");
+                        //logoDivHome.text("HomeLogoTeam");
 
                         // calling away team logo to container
                         container.append(logoDiv);
