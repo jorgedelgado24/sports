@@ -466,7 +466,7 @@ $(document).ready(function () {
             // 4/4
             var linesAwayTeam = $("<div>");
             linesAwayTeam.addClass("col s7");
-            linesawayTeam.addClass("lines-teams");
+            linesAwayTeam.addClass("lines-teams");
             linesAwayTeam.attr("id", "lines-away-team");
 
             awayTeam.append(linesAwayTeam);
