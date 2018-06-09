@@ -66,7 +66,7 @@ $(document).ready(function () {
         favModalFiller();
     });
 
-    $(".lines-teams").on("click", ".line", function () {
+    $("#spreads-page").on("click", ".line", function () {
 
         $(this).addClass('light-blue lighten-3');
         betAdded = true;
@@ -75,8 +75,8 @@ $(document).ready(function () {
     });
 
     $('#favs-modal-container').on('click', 'a', function(){
-        console.log(this);
-        console.log($(this));
+        subcategories.push('MLB');
+        createSpreads();
     });
 
     // --------------------- EVENT LISTENERS -   END ---------------------
@@ -178,6 +178,377 @@ $(document).ready(function () {
         subcategories.push('MLB');
     }
 
+    function createSpreads() {
+        //create the general collapsible call that will hold all the li's with the subcategories spreads
+        var collapsible = $("<div>");
+        collapsible.addClass("spreadspread");
+
+        //start the for loop with the subcategories lenght
+        for (i = 0; i < subcategories.length; i++) {
+
+
+
+            //search in the API the subcategories in favorites tab
+
+            /*
+            var APIkey = "9569048c-ae00-4a84-903d-e74247a22568";
+            var queryURL = "http://jsonodds.com/api/odds/" + subcategories[i];
+        
+            //do the ajax call for the specific sports person
+            $.ajax({
+                url: queryURL,
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Authorization": "Basic " + btoa("jorgedelgado24:lakers24l"),
+                    "x-api-key": "9569048c-ae00-4a84-903d-e74247a22568"
+                }
+            }).then(function(response) {
+                console.log(response);
+        
+            }).catch(function(error) {
+                console.log(error);
+            });
+        
+            */
+
+            //create the li that will hold the subcategories spreads and append it to the collapsible var
+            var li = $("<div>");
+
+            collapsible.append(li);
+
+            //create the subcategory header called collapsibleHeader and append it to the li... 1 of 2
+            var collapsibleHeader = $("<div>");
+            collapsibleHeader.addClass("headerheader");
+
+            li.append(collapsibleHeader);
+
+            //create the first of two columns that will contain the information in the collapsible header with the category icon and the subcategory Name
+            var headerColLogo = $("<div>");
+            headerColLogo.addClass("col s2");
+            headerColLogo.attr("id", "category-logo");
+
+            collapsibleHeader.append(headerColLogo);
+
+            //this is the image that goes inside of the headerColLogo
+            //var categoryLogo = $("<img>");
+            //categoryLogo.attr("src", "./assets/img/" + categoriesImages[i] + ".png");
+
+            //headerColLogo.append(categoryLogo);
+
+            //create the second of two columns that will contain the information in the collapsible header with the category icon and the subcategory Name
+            var headerColSubcategory = $("<div>");
+            headerColSubcategory.addClass("col s3");
+            headerColSubcategory.attr("id", "subcategory-name");
+            headerColSubcategory.text(subcategories[i]);
+
+            collapsibleHeader.append(headerColSubcategory);
+
+
+
+            //create the subcategory Body called collapsibleHeader and append it to the li... 2 of 2
+            var collapsibleBody = $("<div>");
+            collapsibleBody.addClass("bodybody");
+
+            li.append(collapsibleBody);
+
+
+
+            //create the spreadSubcategory where we will have the game-header and game information
+            var spreadSubcategory = $("<div>");
+            spreadSubcategory.addClass("row");
+            spreadSubcategory.attr("id", "spread-subcategory");
+
+            collapsibleBody.append(spreadSubcategory);
+
+            //create the game-header that will be appended to spreadSubcategory. 1 of 2. and will hold the game header information
+            var gameHeader = $("<div>");
+            gameHeader.addClass("row");
+            gameHeader.attr("id", "game-header");
+
+            spreadSubcategory.append(gameHeader);
+
+            //create the columns that will go inside gameHeader. Column 1 of 4
+            var gameHeaderColLogo = $("<div>");
+            gameHeaderColLogo.addClass("col s1 offset-s1");
+            gameHeaderColLogo.attr("id", "category-logo-game-header");
+
+            gameHeader.append(gameHeaderColLogo);
+
+            //create the image that will go inside the gameHeaderColLogo
+            //var gameHeaderCategoryLogo = $("<img>");
+            //gameHeaderCategoryLogo.attr("src", "./assets/img/" + categoriesImages[i] + ".png");
+
+            //gameHeaderColLogo.append(gameHeaderCategoryLogo);
+
+
+            //column 2 of 4.. containing the name of the subcategory
+            var gameHeaderColSubcategory = $("<div>");
+            gameHeaderColSubcategory.addClass("col s3");
+            gameHeaderColSubcategory.attr("id", "subcategory-name-game-header");
+            gameHeaderColSubcategory.text(subcategories[i]);
+
+            gameHeader.append(gameHeaderColSubcategory);
+
+            //column 3 of 4.. containing the game details PULLED FROM API
+            var gameHeaderColGameDescription = $("<div>");
+            gameHeaderColGameDescription.addClass("col s4");
+            gameHeaderColGameDescription.attr("id", "game-description");
+            gameHeaderColGameDescription.text(gameDescription);
+
+            gameHeader.append(gameHeaderColGameDescription);
+
+            //column 4 of 4.. containing the game date PULLED FROM API
+            var gameHeaderColGameDate = $("<div>");
+            gameHeaderColGameDate.addClass("col s3");
+            gameHeaderColGameDate.attr("id", "game-date");
+            gameHeaderColGameDate.text(date);
+
+            gameHeader.append(gameHeaderColGameDate);
+
+            //clearfix gameHeader
+            var gameHeaderClearFix = $("<div>");
+            gameHeaderClearFix.addClass("clearfix");
+
+            gameHeader.append(gameHeaderClearFix);
+
+
+            for (i = 0; i < hometeams.length; i++) {
+
+
+                //create the game div that will be appended to spreadSubcategory. 2 of 2 and will hold the game information
+                var game = $("<div>");
+                game.addClass("row");
+                game.attr("id", "game");
+
+                spreadSubcategory.append(game);
+
+                //create the teams header that will go inside game 1 of 2.
+                var teamsHeader = $("<div>");
+                teamsHeader.addClass("row");
+                teamsHeader.attr("id", "teams-header");
+
+                game.append(teamsHeader);
+
+                //adding columns that will go inside the teamsHeader containing the spread header 1 of 2
+                var gameDateTime = $("<div>");
+                gameDateTime.addClass("col s5");
+                gameDateTime.attr("id", "game-date-time");
+                gameDateTime.text(date);
+
+                teamsHeader.append(gameDateTime);
+
+                //adding column that will hold the spread, total, and odds header 2 of 2
+                var linesHeader = $("<div>");
+                linesHeader.addClass("col s7");
+                linesHeader.attr("id", "lines-header");
+
+                teamsHeader.append(linesHeader);
+
+                //Creating the 3 columns that will go inside the teamsHeader column containing the spread, total and odds header
+                var spread = $("<div>");
+                spread.addClass("col s4");
+                spread.attr("id", "spread");
+                spread.text("Spread");
+
+                linesHeader.append(spread);
+
+                var total = $("<div>");
+                total.addClass("col s5");
+                total.attr("id", "total");
+                total.text("Total");
+
+                linesHeader.append(total);
+
+                var odds = $("<div>");
+                odds.addClass("col s3");
+                odds.attr("id", "odds");
+                odds.text("Odds");
+
+                linesHeader.append(odds);
+
+                //clearfix teamsHeader
+                var teamsHeaderClearFix = $("<div>");
+                teamsHeaderClearFix.addClass("clearfix");
+
+                teamsHeader.append(teamsHeaderClearFix);
+
+                //create the teams that will go inside game 2 of 2.
+                var teams = $("<div>");
+                teams.addClass("row");
+                teams.attr("id", "teams");
+
+                game.append(teams);
+
+                //create the awayTeam that will go inside teams 1 of 2.
+                var awayTeam = $("<div>");
+                awayTeam.addClass("row");
+                awayTeam.attr("id", "away-team");
+
+                teams.append(awayTeam);
+
+                // create the 4 columns that will go inside awayTeam. 1/4
+                var awayTeamBetNumber = $("<div>");
+                awayTeamBetNumber.addClass("col s1");
+                awayTeamBetNumber.attr("id", "away-team-bet-number");
+                //awayTeamBetNumber.text("API away team bet #");
+
+                awayTeam.append(awayTeamBetNumber);
+
+                // 2/4
+                var awayTeamLogo = $("<div>");
+                awayTeamLogo.addClass("col s1");
+                awayTeamLogo.attr("id", "away-team-logo");
+                //awayTeamLogo.text("img away team logo");
+
+                awayTeam.append(awayTeamLogo);
+
+                //image that will go inside awayTeamLogo
+
+                /*
+                var awayTeamLogoImage = $("<img>");
+                awayTeamLogoImage.attr("src", "./assets/img/" + AWAY TEAM NAME FROM API + ".png");
+            
+                awayTeamLogo.append(awayTeamLogoImage);
+                */
+
+
+                // 3/4
+                var awayTeamName = $("<div>");
+                awayTeamName.addClass("col s3");
+                awayTeamName.attr("id", "away-team-name");
+                awayTeamName.text(awayteams[i]);
+
+                awayTeam.append(awayTeamName);
+
+                // 4/4
+                var linesAwayTeam = $("<div>");
+                linesAwayTeam.addClass("col s7");
+                linesAwayTeam.addClass("lines-teams");
+                linesAwayTeam.attr("id", "lines-away-team");
+
+                awayTeam.append(linesAwayTeam);
+
+                //AwayTeam clearfix
+                var awayTeamClearFix = $("<div>");
+                awayTeamClearFix.addClass("clearfix");
+
+                awayTeam.append(awayTeamClearFix);
+
+                //create the 3 columns that will go inside linesAwayTeam
+                var awayTeamSpread = $("<div>");
+                awayTeamSpread.addClass("col s4");
+                awayTeamSpread.addClass("line");
+                awayTeamSpread.attr("id", "away-team-spread");
+                awayTeamSpread.text(spreadAway[i]);
+
+                linesAwayTeam.append(awayTeamSpread);
+
+                var totalOverVar = $("<div>");
+                totalOverVar.addClass("col s5");
+                totalOverVar.addClass("line");
+                totalOverVar.attr("id", "total-over");
+                totalOverVar.text(totalOver[i]);
+
+                linesAwayTeam.append(totalOverVar);
+
+                var awayTeamOdds = $("<div>");
+                awayTeamOdds.addClass("col s3");
+                awayTeamOdds.addClass("line");
+                awayTeamOdds.attr("id", "away-team-odds");
+                awayTeamOdds.text(oddsAway[i]);
+
+                linesAwayTeam.append(awayTeamOdds);
+
+
+                //create the homeTeam that will go inside teams 2 of 2.
+                var homeTeam = $("<div>");
+                homeTeam.addClass("row");
+                homeTeam.attr("id", "home-team");
+
+                teams.append(homeTeam);
+
+                // create the 4 columns that will go inside homeTeam. 1/4
+                var homeTeamBetNumber = $("<div>");
+                homeTeamBetNumber.addClass("col s1");
+                homeTeamBetNumber.attr("id", "home-team-bet-number");
+                // homeTeamBetNumber.text("API home team bet #");
+
+                homeTeam.append(homeTeamBetNumber);
+
+                // 2/4
+                var homeTeamLogo = $("<div>");
+                homeTeamLogo.addClass("col s1");
+                homeTeamLogo.attr("id", "home-team-logo");
+                //homeTeamLogo.text("img home team logo");
+
+                homeTeam.append(homeTeamLogo);
+
+                //image that will go inside homeTeamLogo
+
+                /*
+                var homeTeamLogoImage = $("<img>");
+                homeTeamLogoImage.attr("src", "./assets/img/" + HOME TEAM NAME FROM API + ".png");
+            
+                homeTeamLogo.append(homeTeamLogoImage);
+                */
+
+
+                // 3/4
+                var homeTeamName = $("<div>");
+                homeTeamName.addClass("col s3");
+                homeTeamName.attr("id", "home-team-name");
+                homeTeamName.text(hometeams[i]);
+
+                homeTeam.append(homeTeamName);
+
+                // 4/4
+                var linesHomeTeam = $("<div>");
+                linesHomeTeam.addClass("col s7");
+                linesHomeTeam.addClass("lines-teams");
+                linesHomeTeam.attr("id", "lines-home-team");
+
+                homeTeam.append(linesHomeTeam);
+
+                //AwayTeam clearfix
+                var homeTeamClearFix = $("<div>");
+                homeTeamClearFix.addClass("clearfix");
+
+                homeTeam.append(homeTeamClearFix);
+
+
+                //create the 3 columns that will go inside linesHomeTeam
+                var homeTeamSpread = $("<div>");
+                homeTeamSpread.addClass("col s4");
+                homeTeamSpread.addClass("line");
+                homeTeamSpread.attr("id", "home-team-spread");
+                homeTeamSpread.text(spreadHome[i]);
+
+                linesHomeTeam.append(homeTeamSpread);
+
+                var totalUnderVar = $("<div>");
+                totalUnderVar.addClass("col s5");
+                totalUnderVar.addClass("line");
+                totalUnderVar.attr("id", "total-under");
+                totalUnderVar.text(totalUnder[i]);
+
+                linesHomeTeam.append(totalUnderVar);
+
+                var homeTeamOdds = $("<div>");
+                homeTeamOdds.addClass("col s3");
+                homeTeamOdds.addClass("line");
+                homeTeamOdds.attr("id", "home-team-odds");
+                homeTeamOdds.text(oddsHome[i]);
+
+                linesHomeTeam.append(homeTeamOdds);
+            }
+        }
+
+
+        //append the whole collapsible div to the spreads-page id in the html
+        $("#spreads-page").append(collapsible);
+    }
+
     function favModalFiller() {
         var insideModalSel = $("#favs-modal-container");
         var rowsAmmount = 1;
@@ -203,7 +574,6 @@ $(document).ready(function () {
 
                 var a = $('<a>');
                 a.addClass('btn-floating btn-large waves-effect waves-light red fav-button');
-                a.attr('onClick', 'addSubcategory()');
                 a.text(snapshot.val().name);
                 td.append(a);
 
@@ -246,377 +616,5 @@ $(document).ready(function () {
     var totalUnder = ["Un 8 -110", "Un 8 -115", "Un 9.5 -110", "Un 7.5 -110", "Un 8.5 -101", "Un 9 -119", "Un 8.5 -115"];
     var oddsHome = ["+140", "-175", "+155", "-108", "-230", "-124", "-157"];
     var oddsAway = ["-160", "+155", "-175", "-112", "-190", "+104", "-137"];
-
-
-
-
-    //create the general collapsible call that will hold all the li's with the subcategories spreads
-    var collapsible = $("<div>");
-    collapsible.addClass("spreadspread");
-
-    //start the for loop with the subcategories lenght
-    for (i = 0; i < subcategories.length; i++) {
-
-
-
-        //search in the API the subcategories in favorites tab
-
-        /*
-        var APIkey = "9569048c-ae00-4a84-903d-e74247a22568";
-        var queryURL = "http://jsonodds.com/api/odds/" + subcategories[i];
-    
-        //do the ajax call for the specific sports person
-        $.ajax({
-            url: queryURL,
-            method: "GET",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": "Basic " + btoa("jorgedelgado24:lakers24l"),
-                "x-api-key": "9569048c-ae00-4a84-903d-e74247a22568"
-            }
-        }).then(function(response) {
-            console.log(response);
-    
-        }).catch(function(error) {
-            console.log(error);
-        });
-    
-        */
-
-        //create the li that will hold the subcategories spreads and append it to the collapsible var
-        var li = $("<div>");
-
-        collapsible.append(li);
-
-        //create the subcategory header called collapsibleHeader and append it to the li... 1 of 2
-        var collapsibleHeader = $("<div>");
-        collapsibleHeader.addClass("headerheader");
-
-        li.append(collapsibleHeader);
-
-        //create the first of two columns that will contain the information in the collapsible header with the category icon and the subcategory Name
-        var headerColLogo = $("<div>");
-        headerColLogo.addClass("col s2");
-        headerColLogo.attr("id", "category-logo");
-
-        collapsibleHeader.append(headerColLogo);
-
-        //this is the image that goes inside of the headerColLogo
-        //var categoryLogo = $("<img>");
-        //categoryLogo.attr("src", "./assets/img/" + categoriesImages[i] + ".png");
-
-        //headerColLogo.append(categoryLogo);
-
-        //create the second of two columns that will contain the information in the collapsible header with the category icon and the subcategory Name
-        var headerColSubcategory = $("<div>");
-        headerColSubcategory.addClass("col s3");
-        headerColSubcategory.attr("id", "subcategory-name");
-        headerColSubcategory.text(subcategories[i]);
-
-        collapsibleHeader.append(headerColSubcategory);
-
-
-
-        //create the subcategory Body called collapsibleHeader and append it to the li... 2 of 2
-        var collapsibleBody = $("<div>");
-        collapsibleBody.addClass("bodybody");
-
-        li.append(collapsibleBody);
-
-
-
-        //create the spreadSubcategory where we will have the game-header and game information
-        var spreadSubcategory = $("<div>");
-        spreadSubcategory.addClass("row");
-        spreadSubcategory.attr("id", "spread-subcategory");
-
-        collapsibleBody.append(spreadSubcategory);
-
-        //create the game-header that will be appended to spreadSubcategory. 1 of 2. and will hold the game header information
-        var gameHeader = $("<div>");
-        gameHeader.addClass("row");
-        gameHeader.attr("id", "game-header");
-
-        spreadSubcategory.append(gameHeader);
-
-        //create the columns that will go inside gameHeader. Column 1 of 4
-        var gameHeaderColLogo = $("<div>");
-        gameHeaderColLogo.addClass("col s1 offset-s1");
-        gameHeaderColLogo.attr("id", "category-logo-game-header");
-
-        gameHeader.append(gameHeaderColLogo);
-
-        //create the image that will go inside the gameHeaderColLogo
-        //var gameHeaderCategoryLogo = $("<img>");
-        //gameHeaderCategoryLogo.attr("src", "./assets/img/" + categoriesImages[i] + ".png");
-
-        //gameHeaderColLogo.append(gameHeaderCategoryLogo);
-
-
-        //column 2 of 4.. containing the name of the subcategory
-        var gameHeaderColSubcategory = $("<div>");
-        gameHeaderColSubcategory.addClass("col s3");
-        gameHeaderColSubcategory.attr("id", "subcategory-name-game-header");
-        gameHeaderColSubcategory.text(subcategories[i]);
-
-        gameHeader.append(gameHeaderColSubcategory);
-
-        //column 3 of 4.. containing the game details PULLED FROM API
-        var gameHeaderColGameDescription = $("<div>");
-        gameHeaderColGameDescription.addClass("col s4");
-        gameHeaderColGameDescription.attr("id", "game-description");
-        gameHeaderColGameDescription.text(gameDescription);
-
-        gameHeader.append(gameHeaderColGameDescription);
-
-        //column 4 of 4.. containing the game date PULLED FROM API
-        var gameHeaderColGameDate = $("<div>");
-        gameHeaderColGameDate.addClass("col s3");
-        gameHeaderColGameDate.attr("id", "game-date");
-        gameHeaderColGameDate.text(date);
-
-        gameHeader.append(gameHeaderColGameDate);
-
-        //clearfix gameHeader
-        var gameHeaderClearFix = $("<div>");
-        gameHeaderClearFix.addClass("clearfix");
-
-        gameHeader.append(gameHeaderClearFix);
-
-
-        for (i = 0; i < hometeams.length; i++) {
-
-
-            //create the game div that will be appended to spreadSubcategory. 2 of 2 and will hold the game information
-            var game = $("<div>");
-            game.addClass("row");
-            game.attr("id", "game");
-
-            spreadSubcategory.append(game);
-
-            //create the teams header that will go inside game 1 of 2.
-            var teamsHeader = $("<div>");
-            teamsHeader.addClass("row");
-            teamsHeader.attr("id", "teams-header");
-
-            game.append(teamsHeader);
-
-            //adding columns that will go inside the teamsHeader containing the spread header 1 of 2
-            var gameDateTime = $("<div>");
-            gameDateTime.addClass("col s5");
-            gameDateTime.attr("id", "game-date-time");
-            gameDateTime.text(date);
-
-            teamsHeader.append(gameDateTime);
-
-            //adding column that will hold the spread, total, and odds header 2 of 2
-            var linesHeader = $("<div>");
-            linesHeader.addClass("col s7");
-            linesHeader.attr("id", "lines-header");
-
-            teamsHeader.append(linesHeader);
-
-            //Creating the 3 columns that will go inside the teamsHeader column containing the spread, total and odds header
-            var spread = $("<div>");
-            spread.addClass("col s4");
-            spread.attr("id", "spread");
-            spread.text("Spread");
-
-            linesHeader.append(spread);
-
-            var total = $("<div>");
-            total.addClass("col s5");
-            total.attr("id", "total");
-            total.text("Total");
-
-            linesHeader.append(total);
-
-            var odds = $("<div>");
-            odds.addClass("col s3");
-            odds.attr("id", "odds");
-            odds.text("Odds");
-
-            linesHeader.append(odds);
-
-            //clearfix teamsHeader
-            var teamsHeaderClearFix = $("<div>");
-            teamsHeaderClearFix.addClass("clearfix");
-
-            teamsHeader.append(teamsHeaderClearFix);
-
-            //create the teams that will go inside game 2 of 2.
-            var teams = $("<div>");
-            teams.addClass("row");
-            teams.attr("id", "teams");
-
-            game.append(teams);
-
-            //create the awayTeam that will go inside teams 1 of 2.
-            var awayTeam = $("<div>");
-            awayTeam.addClass("row");
-            awayTeam.attr("id", "away-team");
-
-            teams.append(awayTeam);
-
-            // create the 4 columns that will go inside awayTeam. 1/4
-            var awayTeamBetNumber = $("<div>");
-            awayTeamBetNumber.addClass("col s1");
-            awayTeamBetNumber.attr("id", "away-team-bet-number");
-            //awayTeamBetNumber.text("API away team bet #");
-
-            awayTeam.append(awayTeamBetNumber);
-
-            // 2/4
-            var awayTeamLogo = $("<div>");
-            awayTeamLogo.addClass("col s1");
-            awayTeamLogo.attr("id", "away-team-logo");
-            //awayTeamLogo.text("img away team logo");
-
-            awayTeam.append(awayTeamLogo);
-
-            //image that will go inside awayTeamLogo
-
-            /*
-            var awayTeamLogoImage = $("<img>");
-            awayTeamLogoImage.attr("src", "./assets/img/" + AWAY TEAM NAME FROM API + ".png");
-        
-            awayTeamLogo.append(awayTeamLogoImage);
-            */
-
-
-            // 3/4
-            var awayTeamName = $("<div>");
-            awayTeamName.addClass("col s3");
-            awayTeamName.attr("id", "away-team-name");
-            awayTeamName.text(awayteams[i]);
-
-            awayTeam.append(awayTeamName);
-
-            // 4/4
-            var linesAwayTeam = $("<div>");
-            linesAwayTeam.addClass("col s7");
-            linesAwayTeam.addClass("lines-teams");
-            linesAwayTeam.attr("id", "lines-away-team");
-
-            awayTeam.append(linesAwayTeam);
-
-            //AwayTeam clearfix
-            var awayTeamClearFix = $("<div>");
-            awayTeamClearFix.addClass("clearfix");
-
-            awayTeam.append(awayTeamClearFix);
-
-            //create the 3 columns that will go inside linesAwayTeam
-            var awayTeamSpread = $("<div>");
-            awayTeamSpread.addClass("col s4");
-            awayTeamSpread.addClass("line");
-            awayTeamSpread.attr("id", "away-team-spread");
-            awayTeamSpread.text(spreadAway[i]);
-
-            linesAwayTeam.append(awayTeamSpread);
-
-            var totalOverVar = $("<div>");
-            totalOverVar.addClass("col s5");
-            totalOverVar.addClass("line");
-            totalOverVar.attr("id", "total-over");
-            totalOverVar.text(totalOver[i]);
-
-            linesAwayTeam.append(totalOverVar);
-
-            var awayTeamOdds = $("<div>");
-            awayTeamOdds.addClass("col s3");
-            awayTeamOdds.addClass("line");
-            awayTeamOdds.attr("id", "away-team-odds");
-            awayTeamOdds.text(oddsAway[i]);
-
-            linesAwayTeam.append(awayTeamOdds);
-
-
-            //create the homeTeam that will go inside teams 2 of 2.
-            var homeTeam = $("<div>");
-            homeTeam.addClass("row");
-            homeTeam.attr("id", "home-team");
-
-            teams.append(homeTeam);
-
-            // create the 4 columns that will go inside homeTeam. 1/4
-            var homeTeamBetNumber = $("<div>");
-            homeTeamBetNumber.addClass("col s1");
-            homeTeamBetNumber.attr("id", "home-team-bet-number");
-            // homeTeamBetNumber.text("API home team bet #");
-
-            homeTeam.append(homeTeamBetNumber);
-
-            // 2/4
-            var homeTeamLogo = $("<div>");
-            homeTeamLogo.addClass("col s1");
-            homeTeamLogo.attr("id", "home-team-logo");
-            //homeTeamLogo.text("img home team logo");
-
-            homeTeam.append(homeTeamLogo);
-
-            //image that will go inside homeTeamLogo
-
-            /*
-            var homeTeamLogoImage = $("<img>");
-            homeTeamLogoImage.attr("src", "./assets/img/" + HOME TEAM NAME FROM API + ".png");
-        
-            homeTeamLogo.append(homeTeamLogoImage);
-            */
-
-
-            // 3/4
-            var homeTeamName = $("<div>");
-            homeTeamName.addClass("col s3");
-            homeTeamName.attr("id", "home-team-name");
-            homeTeamName.text(hometeams[i]);
-
-            homeTeam.append(homeTeamName);
-
-            // 4/4
-            var linesHomeTeam = $("<div>");
-            linesHomeTeam.addClass("col s7");
-            linesHomeTeam.addClass("lines-teams");
-            linesHomeTeam.attr("id", "lines-home-team");
-
-            homeTeam.append(linesHomeTeam);
-
-            //AwayTeam clearfix
-            var homeTeamClearFix = $("<div>");
-            homeTeamClearFix.addClass("clearfix");
-
-            homeTeam.append(homeTeamClearFix);
-
-
-            //create the 3 columns that will go inside linesHomeTeam
-            var homeTeamSpread = $("<div>");
-            homeTeamSpread.addClass("col s4");
-            homeTeamSpread.addClass("line");
-            homeTeamSpread.attr("id", "home-team-spread");
-            homeTeamSpread.text(spreadHome[i]);
-
-            linesHomeTeam.append(homeTeamSpread);
-
-            var totalUnderVar = $("<div>");
-            totalUnderVar.addClass("col s5");
-            totalUnderVar.addClass("line");
-            totalUnderVar.attr("id", "total-under");
-            totalUnderVar.text(totalUnder[i]);
-
-            linesHomeTeam.append(totalUnderVar);
-
-            var homeTeamOdds = $("<div>");
-            homeTeamOdds.addClass("col s3");
-            homeTeamOdds.addClass("line");
-            homeTeamOdds.attr("id", "home-team-odds");
-            homeTeamOdds.text(oddsHome[i]);
-
-            linesHomeTeam.append(homeTeamOdds);
-        }
-    }
-
-
-    //append the whole collapsible div to the spreads-page id in the html
-    $("#spreads-page").append(collapsible);
 
 });
