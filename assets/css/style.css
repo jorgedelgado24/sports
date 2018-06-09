@@ -27,6 +27,14 @@ ul.sidenav>li>a>i.align {
 }
 
 /*
+    Styling for the index
+*/
+
+a#add-bet-button {
+    font-size: .7rem;
+}
+
+/*
     Styling for the fav-bar
 */
 
@@ -46,7 +54,8 @@ ul.sidenav>li>a>i.align {
 }
 
 .fav-button {
-    font-size: .8rem;
+    font-size: .5rem;
+    margin-right: 10px;
 }
 
 
