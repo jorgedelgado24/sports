@@ -18,10 +18,33 @@ $(document).ready(function () {
     $('.modal').modal();
 });
 
+
+//arrays
+var teamChosen = ["New York Yankees", "Los Angeles Dodgers", "San Diego Padres", "Chicago White Sox", "Baltimore Orioles", "Washington Nationals"];
+var lineType = ["SPREAD -1.5 +140", "ODDS -175", "TOTAL O7.5 -115", "ODDS +190", "SPREAD +1.5 +104", "TOTAL U8.5 -115"];
+var betTypeBet = ["SPREAD", "ODDS", "TOTAL", "ODDS", "SPREAD", "TOTAL"];
+var payment = ["+140", "-175", "-115", "+190", "+104", "-115"]
+var ticket = ["14890345", "14905683", "12847504", "14029583", "13830475", "13249678"]
+var gameDate = ["9/6/2018 6:15 PM", "9/6/2018 8:10 PM", "9/6/2018 3:10 PM", "9/6/2018 3:05 PM", "9/6/2018 12:07 PM", "9/6/2018 11:05 AM"];
+var dateBet = ["9/6/2018", "9/6/2018","9/6/2018","9/6/2018","9/6/2018","9/6/2018"]
+var apuesta = ["30", "50", "40", "20", "25", "50"];
+var paymentPayment = ["42", "28.57", "34.78", "38", "26", "43.48"]
+
 //container 1 confirm tickets
 $(document).ready(function () {
-    var container = $("#cont");
 
+    for (i = 0; i < teamChosen.length ; i++){
+
+    
+    //var container = $("#cont");
+    
+    var newDiv = $("<div>");
+    newDiv.addClass("row");
+    newDiv.attr("id", "new-div");
+
+    var newDiv1 = $("<div>");
+    newDiv1.addClass("container");
+    newDiv1.attr("id", "cont-prueba");
 
     var betSpecs = $("<div>");
     betSpecs.addClass("row");
@@ -39,17 +62,28 @@ $(document).ready(function () {
     betId.addClass("col s4");
     betId.attr("id", "bet-id");
 
-    betType.text("STRAIGHT");
-    betDate.text("05/29/18 09:55");
-    betId.text("14898368362-1");
+    betType.text(lineType[i]);
+    betDate.text(dateBet[i]);
+    betId.text(ticket[i]);
 
     betSpecs.append(betType);
     betSpecs.append(betDate);
     betSpecs.append(betId);
-    container.append(betSpecs);
+    newDiv1.append(betSpecs);
 
+    newDiv.append(newDiv1);
+
+    $("#master").append(newDiv)
     //container 2 confirm tickets
-    var container2 = $("#cont2");
+    //var container2 = $("#cont2");
+
+    var containerB2 = $("<div>");
+    containerB2.addClass("container");
+
+
+    var row2 = $("<div>");
+    row2.addClass("row");
+    row2.attr("id", "row2");
 
     var betLogo = $("<div>");
     betLogo.addClass("col s2");
@@ -57,7 +91,7 @@ $(document).ready(function () {
 
     var imageLogo = $("<img>");
     imageLogo.attr("id", "team-logo");
-    imageLogo.attr("src", "./assets/img/NBA/Chicago Bulls.png");
+    imageLogo.attr("src", "./assets/img/MLB/New York Yankees.png");
 
     betLogo.append(imageLogo);
 
@@ -73,18 +107,27 @@ $(document).ready(function () {
     BetGameTime.addClass("col s3");
     BetGameTime.attr("id", "bet-game-time");
 
-    betName.text("Cleveland Cavaliers");
-    nSpread.text("+11.5 -110");
-    BetGameTime.text("03/06/18 7:00 PM")
+    betName.text(teamChosen[i]);
+    nSpread.text(lineType[i]);
+    BetGameTime.text(gameDate[i]);
 
-    container2.append(betLogo);
-    container2.append(betName);
-    container2.append(nSpread);
-    container2.append(BetGameTime);
+    //(row2).append(betLogo);
+    (row2).append(betName);
+    (row2).append(nSpread);
+    (row2).append(BetGameTime);
+    containerB2.append(row2)
+    $("#master").append(containerB2);
 
     //container 3 confirm tickets
 
-    var container3 = $("#cont3");
+    //var container3 = $("#cont3");
+
+    var containerB3 = $("<div>");
+    containerB3.addClass("container");
+
+    var row3 = $("<div>");
+    row3.addClass("row");
+    row3.attr("id", "cont3");
 
     var form1 = $("<div>");
     form1.addClass("row quitar-margin");
@@ -128,22 +171,26 @@ $(document).ready(function () {
     form5.append(form9);
     form9.append(form10);
     form9.append(form11);
-    form6.append(form8);
-    form6.append(form7);
+    //form6.append(form8);
+   // form6.append(form7);
     form5.append(form6);
     form4.append(form5);
     form3.append(form4);
     form2.append(form3);
     form1.append(form2);
-    container3.append(form1);
+    row3.append(form1);
+    containerB3.append(row3);
+    $("#master").append(containerB3);
 
-    form8.text("Your Risk");
+    //form8.text("Your Risk");
     form11.text("To Win");
 
     //container 1 current tickets
 
-    var container4 = $("#cont4");
+    var containerCurrent = $("<div>");
+    containerCurrent.addClass("row")
 
+/*
     var money = $("<div>");
     money.addClass("row");
     money.attr("id", "available-pending")
@@ -167,11 +214,15 @@ $(document).ready(function () {
     money.append(available);
     money.append(pending);
     money.append(balance);
-    container4.append(money)
+    //container4.append(money)
+
+    containerCurrent.append(money);
+
+    */
 
     //container 2 current tickets
     
-    var container5 = $("#cont5");
+    //var container5 = $("#cont5");
 
     var bet1 = $("<div>");
     bet1.addClass("row");
@@ -189,18 +240,20 @@ $(document).ready(function () {
     betId1.addClass("col s4");
     betId1.attr("id", "bet-id");
 
-    betType1.text("STRAIGHT");
-    betDate1.text("05/29/18 09:55");
-    betId1.text("14892834-1");
+    betType1.text(betTypeBet[i]);
+    betDate1.text(dateBet[i]);
+    betId1.text(ticket[i]);
 
     bet1.append(betType1);
     bet1.append(betDate1);
     bet1.append(betId1);
-    container5.append(bet1);
+    //container5.append(bet1);
+
+    containerCurrent.append(bet1);
 
    //container 3 current tickets
 
-    var container6 = $("#cont6")
+    //var container6 = $("#cont6")
 
     var newRow = $("<div>");
     newRow.addClass("row");
@@ -212,9 +265,9 @@ $(document).ready(function () {
 
     var imageLogo1 = $("<img>");
     imageLogo1.attr("id", "team-logo");
-    imageLogo1.attr("src", "./assets/img/NBA/Cleveland Cavaliers.png");
+    imageLogo1.attr("src", "./assets/img/MLB/" + teamChosen[i] + ".png");
 
-    betLogo1.append(imageLogo);
+    betLogo1.append(imageLogo1);
 
     var betName1 = $("<div>");
     betName1.addClass("col s4");
@@ -228,19 +281,21 @@ $(document).ready(function () {
     BetGameTime1.addClass("col s3");
     BetGameTime1.attr("id", "bet-game-time");
 
-    betName1.text("Cleveland Cavaliers");
-    nSpread1.text("+11.5 -110");
-    BetGameTime1.text("03/06/18 7:00 PM")
+    betName1.text(teamChosen[i]);
+    nSpread1.text(lineType[i]);
+    BetGameTime1.text(gameDate[i]);
 
     newRow.append(betLogo1);
     newRow.append(betName1);
     newRow.append(nSpread1);
     newRow.append(BetGameTime1);
-    container6.append(newRow);
+    //container6.append(newRow);
+
+    containerCurrent.append(newRow);
 
     //container 4 current tickets
 
-    var container7 = $("#cont7");
+    //var container7 = $("#cont7");
 
     var newRow1 = $("<div>");
     newRow1.addClass("row");
@@ -254,14 +309,26 @@ $(document).ready(function () {
     toWin.addClass("col s6");
     toWin.attr("id", "to-win");
 
-    risk1.text("Risk: ");
-    toWin.text("To Win: ")
+    risk1.text("Risk: " + apuesta[i]);
+    toWin.text("To Win: " + paymentPayment[i]);
 
     newRow1.append(risk1);
     newRow1.append(toWin);
-    container7.append(newRow1);
+    //container7.append(newRow1);
+
+    containerCurrent.append(newRow1);
+
+    //container6.append(container7);
+    //container5.append(container6);
+    //container4.append(container5);
+    //container3.append(container4);
+    //container2.append(container3);
+    //container.append(container2);
 
 
+    $("#master-current").append(containerCurrent);
+
+    }
 
 });
   

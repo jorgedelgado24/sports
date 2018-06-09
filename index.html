@@ -16,7 +16,7 @@
         crossorigin="anonymous">
 </head>
 
-<body>
+<body id="body">
     <!-- START Body -->
     <!-- START Header -->
     <nav>
@@ -71,10 +71,10 @@
                     <img src="assets/img/field.png">
                 </div>
                 <a href="#">
-                    <img class="circle" src="assets/img/user.svg">
+                    <img class="circle" id="user-picture" src="assets/img/user.svg">
                 </a>
                 <a href="#">
-                    <span class="white-text name">John Doe</span>
+                    <span class="white-text name" id="user-name">John Doe</span>
                 </a>
             </div>
         </li>
@@ -124,7 +124,7 @@
 
     <!-- START Main-->
     <div class="row col s12" id="spreads-page">
-        <ul class="collapsible">
+    <!--    <ul class="collapsible">
             <li>
                 <div class="collapsible-header">
                     <div class="col s2" id="category-logo">cat logo</div>
@@ -489,11 +489,13 @@
             </li>
         </ul>
     </div>
+-->
 
-
-    <a class="btn-floating btn-large waves-effect waves-light red">
-        <i class="material-icons">add</i>
-    </a>
+    <div class="fixed-action-btn">
+        <a id="add-bet-button" class="btn-floating btn-large red" href="pending-tickets.html">
+          <i class="large material-icons">add</i>
+        </a>
+    </div>
 
     <!-- END Main -->
 
@@ -531,7 +533,7 @@
     <!-- Firebase JS CDN; Compiled and minified -->
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
     <!-- Local JS file; Not compiled nor minified -->
-    <script src="assets/js/index-app.js"></script>
+    <script src="./assets/js/index-app.js"></script>
 </body>
 
 </html>
