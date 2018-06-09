@@ -308,8 +308,8 @@ $(document).ready(function () {
     //container5.append(container6);
     //container4.append(container5);
     //container3.append(container4);
-    container2.append(container3);
-    container.append(container2);
+    //container2.append(container3);
+    //container.append(container2);
 
     }
 
