@@ -179,7 +179,6 @@ $(document).ready(function () {
 
 
 
-
 //Need to pull from fav bar (firebase) the favorite categories
 
 //Store the favorite categories in variable. Also get the categories, categoriesImages, and subcategoriesImages. For now, storing in array below to fulfill examaple.

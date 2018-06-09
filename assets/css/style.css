@@ -147,13 +147,15 @@ border: 1px solid lightblue;
     font-size: 12px;
 }
 
+
 #bet{
     border: 1px solid lightblue
 }
 
 #spread-specs {
-    font-size: 12px;
+    font-size: 11px;
 }
+
 
 #bet-game-time {
     font-size: 12px;
@@ -244,7 +246,10 @@ border: 1px solid lightblue;
     margin: 0px;
 }
 
-
+#team-logo {
+    width: 45px;
+    height: 25px;
+}
 
 .quitar-margin{
     margin: 0px;
