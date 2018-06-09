@@ -15,6 +15,7 @@ $(document).ready(function () {
 
     //Verify if the user has logged in
     checkLoginStatus();
+    modifyUserInfo();
 
     // --------------------- ON LOAD EVENTS -   END ---------------------
 
@@ -106,8 +107,17 @@ $(document).ready(function () {
             uid: pUser.uid,
             refreshToken: pUser.refreshToken
         }).then(() => {
+            usersDB.child(userUniqueID).on("value", function(snapshot) {
+                userDbObject = snapshot.val()
+                userOnDB = true;
+            });
             favRowFiller();//Should work without this, but will have to do, for now
         });
+    }
+
+    function modifyUserInfo() {
+        $('#user-picture').attr('src', userDbObject.photoURL);
+        $('#user-name').text(userDbObject.displayName);
     }
 
     function favRowFiller() {
