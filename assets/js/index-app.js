@@ -156,7 +156,7 @@ $(document).ready(function () {
 
 });
 
-/*
+
 //create the general collapsible call that will hold all the li's with the subcategories spreads
 var collapsible = $("<ul>");
 collapsible.addClass("collapsible");
@@ -215,4 +215,3 @@ for (i = 0; i < subcategories.length; i++) {
 //append the whole collapsible div to the spreads-page id in the html
 $("#spreads-page").append(collapsible);
 
-*/
