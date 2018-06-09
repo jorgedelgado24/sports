@@ -466,6 +466,7 @@ $(document).ready(function () {
             // 4/4
             var linesAwayTeam = $("<div>");
             linesAwayTeam.addClass("col s7");
+            linesawayTeam.addClass("lines-teams");
             linesAwayTeam.attr("id", "lines-away-team");
 
             awayTeam.append(linesAwayTeam);
@@ -479,6 +480,7 @@ $(document).ready(function () {
             //create the 3 columns that will go inside linesAwayTeam
             var awayTeamSpread = $("<div>");
             awayTeamSpread.addClass("col s4");
+            awayTeamSpread.addClass("line");
             awayTeamSpread.attr("id", "away-team-spread");
             awayTeamSpread.text(spreadAway[i]);
 
@@ -486,6 +488,7 @@ $(document).ready(function () {
 
             var totalOverVar = $("<div>");
             totalOverVar.addClass("col s5");
+            totalOverVar.addClass("line");
             totalOverVar.attr("id", "total-over");
             totalOverVar.text(totalOver[i]);
 
@@ -493,6 +496,7 @@ $(document).ready(function () {
 
             var awayTeamOdds = $("<div>");
             awayTeamOdds.addClass("col s3");
+            awayTeamOdds.addClass("line");
             awayTeamOdds.attr("id", "away-team-odds");
             awayTeamOdds.text(oddsAway[i]);
 
@@ -543,6 +547,7 @@ $(document).ready(function () {
             // 4/4
             var linesHomeTeam = $("<div>");
             linesHomeTeam.addClass("col s7");
+            linesHomeTeam.addClass("lines-teams");
             linesHomeTeam.attr("id", "lines-home-team");
 
             homeTeam.append(linesHomeTeam);
@@ -557,6 +562,7 @@ $(document).ready(function () {
             //create the 3 columns that will go inside linesHomeTeam
             var homeTeamSpread = $("<div>");
             homeTeamSpread.addClass("col s4");
+            homeTeamSpread.addClass("line");
             homeTeamSpread.attr("id", "home-team-spread");
             homeTeamSpread.text(spreadHome[i]);
 
@@ -564,6 +570,7 @@ $(document).ready(function () {
 
             var totalUnderVar = $("<div>");
             totalUnderVar.addClass("col s5");
+            totalUnderVar.addClass("line");
             totalUnderVar.attr("id", "total-under");
             totalUnderVar.text(totalUnder[i]);
 
@@ -571,6 +578,7 @@ $(document).ready(function () {
 
             var homeTeamOdds = $("<div>");
             homeTeamOdds.addClass("col s3");
+            homeTeamOdds.addClass("line");
             homeTeamOdds.attr("id", "home-team-odds");
             homeTeamOdds.text(oddsHome[i]);
 
@@ -581,5 +589,15 @@ $(document).ready(function () {
 
     //append the whole collapsible div to the spreads-page id in the html
     $("#spreads-page").append(collapsible);
+
+
+
+
+    $(".lines-teams").on("click", ".line", function () {
+
+        var state = $(this).val();
+        console.log(state);
+
+    });
 
 });
